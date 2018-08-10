@@ -1,0 +1,930 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 1200px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+#mobile {
+   display: none;
+ }
+}
+
+</style>
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+	<div style="width: 75%; padding-left: 25px;">
+<p><h8 style="font-size:175%">Ritual Astrology <img style="PADDING-LEFT: 25px" src = "/static/website/images/astro.png"></img></h8><br>
+</br>
+<i>This page is notes for my upcoming book on astrology</i><br><br>
+When most people think of astrology all they think about is their sun sign.  Some are even familiar with the rest of the signs, or what some of them mean.  There is much more to astrology than that.  Many hundreds of years ago people used astrology to plan magickal workings when the planets were best aligned.  Modern astrologers have forgotten how to do that.  With this work I set before you, I hope to change that forever.  The goal of this writing is to examine various aspects of astrology, and how they can be used in Magick.  I'll show you how to use the symbology and correspondences in astrology to align the purpose of your rituals, and to enhance the working of your spells.
+</br>
+</br>
+Here are the Approximate Solar Tides, showing which sign falls on which part of the year.  Below this there are the magickal energies corresponding to each of the signs.  So following this you know what kind of magic is best to perform at any time of the year:
+</br>
+</br>	
+<b>Aries:</b> March 21–April 20
+</br>
+</br>
+<b>Taurus:</b> April 21–May 21
+</br>
+</br>
+<b>Gemini:</b> May 22–June 21
+</br>
+</br>
+<b>Cancer:</b> June 22–July 22
+</br>
+</br>
+<b>Leo:</b> July 23–August 23
+</br>
+</br>
+<b>Virgo:</b> August 24–September 22
+</br>
+</br>
+<b>Libra:</b> September 23–October 23
+</br>
+</br>
+<b>Scorpio:</b> October 24–November 22
+</br>
+</br>
+<b>Sagittarius:</b> November 23–December 21
+</br>
+</br>
+<b>Capricorn:</b> December 22–January 20
+</br>
+</br>
+<b>Aquarius:</b> January 21–February 18
+</br>
+</br>
+<b>Pisces:</b> February 19–March 20
+</br>
+</br>
+</br>
+Astrology does not just deal with the 12 signs, it also deals with 10 planets including the sun & the moon.  To find the correct planets to use, start with the planet that rules the sign you are in. Then consider which planet rules the day of the week you are planning your ritual, and which planet rules the the Planetary Hour for your ritual.
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Ruling Planets:</h8><br><br>
+</br>
+<b>Aries:</b> Mars
+</br>
+</br>
+<b>Taurus:</b> Venus
+</br>
+</br>
+<b>Gemini:</b> Mercury
+</br>
+</br>
+<b>Cancer:</b> Moon
+</br>
+</br>
+<b>Leo:</b> Sun
+</br>
+</br>
+<b>Virgo:</b> Mercury
+</br>
+</br>
+<b>Libra:</b> Venus
+</br>
+</br>
+<b>Scorpio:</b> Pluto
+</br>
+</br>
+<b>Sagittarius:</b> Jupiter
+</br>
+</br>
+<b>Capricorn:</b> Saturn
+</br>
+</br>
+<b>Aquarius:</b> Uranus
+</br>
+</br>
+<b>Pisces:</b> Neptune
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Zodiac Times:</h8><br><br>
+</br>
+<b>Aries:</b> 08:00:00 PM - 09:00:00 PM and 08:00:00 AM - 09:00:00 AM
+</br>
+</br>
+<b>Taurus:</b> 09:00:00 PM - 10:00:00 PM and 09:00:00 AM - 10:00:00 AM
+</br>
+</br>
+<b>Gemini:</b> 10:00:00 PM - 11:00:00 PM and 10:00:00 AM - 11:00:00 AM
+</br>
+</br>
+<b>Cancer:</b> 11:00:00 PM - 12:00:00 PM and 11:00:00 AM - 12:00:00 AM
+</br>
+</br>
+<b>Leo:</b> 12:00:00 PM - 01:00:00 PM and 12:00:00 AM - 01:00:00 AM
+</br>
+</br>
+<b>Virgo:</b> 01:00:00 PM - 02:00:00 PM and 01:00:00 AM - 02:00:00 AM
+</br>
+</br>
+<b>Aries:</b> 02:00:00 PM - 03:00:00 PM and 02:00:00 AM - 03:00:00 AM
+</br>
+</br>
+<b>Libra:</b> 03:00:00 PM - 04:00:00 PM and 03:00:00 AM - 04:00:00 AM
+</br>
+</br>
+<b>Scorpio:</b> 04:00:00 PM - 05:00:00 PM and 04:00:00 AM - 05:00:00 AM
+</br>
+</br>
+<b>Capricorn:</b> 5:00:00 PM - 06:00:00 PM and 05:00:00 AM - 06:00:00 AM
+</br>
+</br>
+<b>Aquarius:</b> 06:00:00 PM - 07:00:00 PM and 06:00:00 AM - 07:00:00 AM
+</br>
+</br>
+<b>Pisces:</b> 07:00:00 AM - 08:00:00 AM and 07:00:00 PM - 08:00:00 PM
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Zodiac Days:</h8><br><br>
+</br>
+<b>Sunday:</b> Leo
+</br>
+</br>
+<b>Monday:</b> Cancer
+</br>
+</br>
+<b>Tuesday:</b> Aries Scorpio
+</br>
+</br>
+<b>Wednesday:</b> Virgo Gemini
+</br>
+</br>
+<b>Thursday:</b> Sagitarius Pisces
+</br>
+</br>
+<b>Friday:</b> Taurus Libra
+</br>
+</br>
+<b>Saturday:</b> Capricorn Aquarius
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Planetary Days:</h8><br><br>
+</br>
+<b>Sunday:</b> Sun
+</br>
+</br>
+<b>Monday:</b> Moon
+</br>
+</br>
+<b>Tuesday:</b> Mars, Pluto
+</br>
+</br>
+<b>Wednesday:</b> Mercury
+</br>
+</br>
+<b>Thursday:</b> Jupiter, Neptune
+</br>
+</br>
+<b>Friday:</b> Venus
+</br>
+</br>
+<b>Saturday:</b> Saturn, Uranus
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Planetary Times:</h8><br><br>
+</br>
+<b>Saturn:</b> 12:00:00 AM - 02:24:00 AM 
+</br></br>
+<b>Uranus:</b> 02:24:00 AM - 04:48:00 AM 
+</br></br>
+<b>Neptune:</b> 04:48:00 AM - 07:12:00 AM 
+</br></br>
+<b>Pluto:</b> 07:12:00 AM - 09:36:00 AM 
+</br></br>
+<b>Sun:</b> 09:36:00 AM - 012:00:00 PM 
+</br></br>
+<b>Mercury:</b> 12:00:00 PM - 2:24:00 PM 
+</br></br>
+<b>Venus:</b> 2:24:00 PM - 04:48:00 PM 
+</br></br>
+<b>Mars:</b> 04:48:00 PM - 07:12:00 PM
+</br></br>
+<b>Jupiter:</b> 07:12:00 PM - 10:48:00 PM 
+</br></br>
+<b>Moon:</b> 10:48:00 PM - 12:00:00 AM 
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">The Moon Sign:</h8><br><br>
+</br>
+Remember that the Sun sign is the most significant force for ritual, but the Moon has a strong influences on the internal and receptive energies in a ritual.  The sign of the moon is always changing, but you can check it online here:  <a href="https://www.lunarium.co.uk/">www.lunarium.co.uk</a>
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Elements:</h8><br><br>
+</br>
+Elements in Astrology are also associated with the Zodiac.  If your ritual is aligned with the qualities of one of the elements, you can draw further energies from these correspondences as well:
+</br>
+</br>
+<b>Earth:</b> Taurus, Virgo, Capricorn
+</br>
+</br>
+<b>Air:</b> Gemini, Libra, Aquarius
+</br>
+</br>
+<b>Fire:</b> Aries, Leo, Sagitarius
+</br>
+</br>
+<b>Water:</b> Cancer, Scorpio, Pisces
+</br>
+</br>
+Here are the Elemental Qualities that you may wish to use:
+</br>
+</br>
+<b>Earth:</b> Earth concerns all things to do with structure; stability, security, sustenance, materials, and physical reality (plant, animal, and mineral). 
+</br>
+</br>
+<b>Air:</b> Gemini, Libra, and Aquarius. Air concerns all things to do with the mind; perception, ideas, intellectuality, study, science, communication, society, and information. 
+</br>
+</br>
+<b>Fire:</b> Aries, Leo, and Sagittarius. Fire concerns all things to do with activity; motivation, invigoration, lust, sexuality, sensuality, passion, confidence, and transformation. 
+</br>
+</br>
+<b>Water:</b> Cancer, Scorpio, and Pisces. Water concerns all things to do with intuition; emotions, love, empathy, compassion, healing, psychic ability, astral travel, sleep, and dreaming.  
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Tree Of Life:</h8><br><br>
+</br>
+Use the astrological relationship between the Sephirot in Kabbalah and the planets of Astrology. In Kabbalah there are 10 Sephirot, and in Astrology there are 10 luminous bodies. Eight planets, and the Sun & the Moon. There is also a hidden Sephirot, which leaves room for Earth. These domains of magic can accomplish virtually anything you can imagine, and can be combined in any way you need them to. It is no small coincidence that these relationships from centuries ago describe modern astrology so perfectly. 
+</br>
+</br>
+<b>Sun:</b> Tiphareth
+</br>
+</br>
+<b>Moon:</b> Yesod
+</br>
+</br>
+<b>Mercury:</b> Hod
+</br>
+</br>
+<b>Venus:</b> Netzach
+</br>
+</br>
+<b>Earth:</b> Malkuth
+</br>
+</br>
+<b>Mars:</b> Geburah
+</br>
+</br>
+<b>Jupiter:</b> Chesed
+</br>
+</br>
+<b>Saturn:</b> Binah
+</br>
+</br>
+<b>Uranus:</b> Da’ath
+</br>
+</br>
+<b>Neptune:</b> Chokma
+</br>
+</br>
+<b>Pluto:</b> Kether
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Spells of the Zodiac:</h8><br><br>
+</br>
+<b>Aries</b></br></br>
+Increasing your confnidence</br>
+Making good impressions</br>
+Changing how others see you</br>
+</br></br>
+
+<b>Taurus</b></br></br>
+Finding work</br>
+Getting a promotion</br>
+Making money</br>
+Getting married</br>
+</br></br>
+
+<b>Gemini</b></br></br>
+Understanding other points of view</br>
+Getting your point across</br>
+Good communication and writing</br>
+</br></br>
+
+<b>Cancer</b></br></br>
+Happy Family & Home Life</br>
+Feeling others emotions</br>
+Psychic Intuition</br>
+</br></br>
+
+<b>Leo</b></br></br>
+Increasing talent and creativity</br>
+Skill at games & gambling</br>
+Creating romance in relationsips</br>
+
+
+</br></br>
+<b>Virgo</b></br></br>
+Creating health</br>
+Managing schedules & routines</br>
+Deeper understanding</br>
+</br></br>
+<b>Libra</b></br></br>
+Healthy partnersips</br>
+Good relationships</br>
+Diplomacy</br>
+</br></br>
+<b>Scorpio</b></br></br>
+Curses and vengeance</br>
+Death and transformation</br>
+</br></br>
+
+<b>Sagittarius</b></br></br>
+Safe travel</br>
+Finding directions</br>
+Learning and school</br>
+Inspiration and luck</br>
+</br></br>
+
+<b>Capricorn</b></br></br>
+Influencing politics and government</br>
+Gaining social status</br>
+Successful career path</br>
+</br></br>
+
+<b>Aquarius</b></br></br>
+Quality friendships</br>
+Social Networking</br>
+Meeting new people</br>
+</br></br>
+
+<b>Pisces</b></br></br>
+Vission quests and dreaming</br>
+Seeing the future</br>
+Revealing hidden things</br>
+</br>
+</br>
+</br> 
+<p><h8 style="font-size:175%">Planetary Spells:</h8><br><br>
+<b>Sun</b> 
+</br></br>
+Help others understand your point of view</br>
+Bring happiness and laughter to relationships</br>
+Gain a positions of leadership</br>
+Increase Confidence</br>
+Motivate yourself and other people</br>
+Increase strength and energy</br>
+Strengthen your health</br>
+</br></br>
+<b>Moon</b> 
+</br></br>
+Understand other people</br>
+Feeling emotions</br>
+Psychic intuition</br>
+Casting magick</br>
+Receiving wisdom</br>
+Protection</br>
+</br></br>
+<b>Mercury</b>
+</br></br>
+Improved communication</br>
+Enhanced concentration</br>
+Increase in learning ability</br>
+Clear perception</br>
+Safe travels</br>
+Channeling knowledge</br>
+</br></br>
+<b>Venus</b> 
+</br></br>
+Increase deeper love in relationships</br>
+Attracting a new relationship</br>
+Create feelings of romance on a date</br>
+Enhance pleasure in love making</br>
+Increase fertility</br>
+Create better first impressions</br>
+Make friends</br>
+</br></br>
+<b>Earth</b> 
+</br></br>
+Perseverance through hard times</br>
+Prosperity and wealth</br>
+Good health</br>
+Finding lost items</br>
+Safe travels</br>
+Manifestation</br>
+</br></br>
+<b>Mars</b> 
+</br></br>
+Strength and health</br>
+Protection from enemies</br>
+Solving problems</br>
+Drawing energy</br>
+Power of persuasion</br>
+</br></br>
+<b>Jupiter</b> 
+</br></br>
+Drawing good luck</br>
+Attracting wealth</br>
+Taking opportunities</br>
+Generosity from strangers</br>
+Positivity and optimism</br>
+Finding a purpose</br>
+</br></br>
+<b>Saturn</b> 
+</br></br>
+Seeing the future</br>
+Perseverance</br>
+Perfect timing</br>
+Conquering fears</br>
+Reversing magick</br>
+</br></br>
+<b>Uranus</b> 
+</br></br>
+Enhancing intuition</br>
+Handling changes</br>
+Starting new things</br>
+Inspiration</br>
+Finding your true self</br>
+</br></br>
+<b>Neptune</b> 
+</br></br>
+Healing disease</br>
+Strengthen friendships</br>
+Dreams and vision</br>
+Psychic ability</br>
+Creating compassion</br>
+</br></br>
+<b>Pluto</b>
+</br></br>
+Power over others</br>
+Curses and destructive magic</br>
+Binding people to oaths</br>
+Protection from magic</br>
+Speaking with spirits</br>
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Candles:</h8><br><br>
+</br>
+Candle magick works well with astrological ritual.  Each planet has a color, and when it is lit becomes a symbol of the planet's light in the nights sky.  This is a table of colors for your candles:
+</br>
+</br>
+<b>Sun:</b> Yellow
+</br>
+</br>
+<b>Moon:</b> White
+</br>
+</br>
+<b>Mercury:</b> Variable
+</br>
+</br>
+<b>Venus:</b> Green
+</br>
+</br>
+<b>Earth:</b> Brown
+</br>
+</br>
+<b>Mars:</b> Red
+</br>
+</br>
+<b>Jupiter:</b> Blue
+</br>
+</br>
+<b>Saturn:</b> Orange
+</br>
+</br>
+<b>Uranus:</b> Violet
+</br>
+</br>
+<b>Neptune:</b> Gray
+</br>
+</br>
+<b>Pluto:</b> Black
+</br>
+</br>
+</br>
+<p><h8 style="font-size:175%">Incantations of the Zodiac:</h8><br><br>
+</br>
+These incantations are designed to be spoken at the beginning of the ritual when you light the appropriate candle.
+</br>
+</br>
+<b>Aries</b>
+</br>
+</br>
+Aries, who ever since time began,
+<br>
+Has ruled the land forever,
+<br>
+As the Ram 
+</br>
+</br>
+<b>Taurus</b>
+</br></br>
+Taurus is strong,
+</br>
+Untill her last breath
+</br>
+She sees all our wrongs
+</br>
+And is loyal 'till death
+</br></br>
+<b>Gemini</b>
+</br></br>
+Gemini 'o Twins
+</br>
+Here I begin
+</br>
+Uncertain if I'll win
+</br>
+Or fall to sin
+</br>
+Open your door to let me in
+</br></br>
+<b>Cancer</b>
+</br></br>
+Cancer, a dancer in the sky
+</br>
+You hold truth the answers
+</br>
+By and by
+</br></br>
+<b>Leo</b>
+</br></br>
+Leo, strong as the Lion
+</br>
+You are the guardian of Zion
+</br></br>
+<b>Virgo</b>
+</br></br>
+From the sky the magic flows
+</br>
+In the stars the Goddess glows
+</br>
+The Virgin shares what she knows
+</br>
+And speaks to all of Virgo
+</br></br>
+<b>Libra</b>
+</br></br>
+Cast away the veil
+</br>
+With you I will not fail
+</br>
+Libra with your scales
+</br>
+Free me from all earthly jails
+</br></br>
+<b>Scorpio</b>
+</br></br>
+Hear me Scorpio
+</br>
+For I'm standing far below
+</br>
+I ask not to be your foe
+</br>
+And that you show me all you know!
+</br></br>
+<b>Sagitarius</b>
+</br></br>
+Sagitarius the Archer,
+</br>
+With your bows departure
+</br>
+Let loose your arrows
+</br>
+Flying faster than the sparrows
+</br></br>
+<b>Capricorn</b>
+</br></br>
+Capricorn the goat
+</br>
+Up in the sky, and so remote
+</br>
+I beg you be my antidote
+</br>
+I quote the spell you have wrote
+</br></br>
+<b>Aquarius</b>
+</br></br>
+To the stars of Aquarius
+</br>
+Numerous and various
+</br>
+Bring light to the precarious
+</br></br>
+<b>Pisces</b>
+</br></br>
+I call upon Pisces
+</br>
+I call upon the Fish
+</br>
+Lead me through crises
+</br>
+And grant for me this wish
+</br></br></br>
+<p><h8 style="font-size:175%">Incantations of the Planets:</h8><br><br>
+</br>
+These incantations are designed to be spoken at the beginning of the ritual when you light the appropriate candle.
+</br></br>
+<b>Mars</b>
+</br></br>
+Gazing in wonder amid the stars,
+</br>
+I beg the favor of you, 
+</br>
+The God of Mars.
+</br></br>
+<b>Venus</b>
+</br></br>
+Of all the stars, Venus
+</br>
+You are the most fair
+</br>
+Vast distances between us
+</br>
+I gaze up and stare
+</br></br>
+<b>Mercury</b>
+</br></br>
+Mercury, in the sky
+</br>
+Above me, oh so high
+</br>
+Lift me up so I may fly
+</br></br>
+<b>Moon</b>
+</br></br>
+I call upon the Godess Moon
+</br>
+May my dreams come real soon
+</br>
+In her light that I see
+</br>
+What becomes real to me
+</br></br>
+<b>Sun</b>
+</br></br>
+Oh Sun, the day is never done
+</br>
+You are the center and the one
+</br>
+All around you planets spun
+</br>
+A light brighter there is none
+</br></br>
+<b>Pluto</b>
+</br></br>
+Oh, dark and hidden Pluto 
+</br>
+Share with me what you know
+</br>
+And save me from the grave below
+</br></br>
+<b>Jupiter</b>
+</br></br>
+As the galaxys stir
+</br>
+I ask this of you Jupiter
+</br>
+Permit this magick to occur
+</br></br>
+<b>Saturn</b>
+</br></br>
+I call out to you Saturn
+</br>
+Hanging in heaven like a lantern
+<br>
+Reveal to me the great pattern
+</br></br>
+<b>Uranus</b>
+</br></br>
+Uranus, make not this life aimless
+</br>
+Take all pains and make them painless
+</br>
+Without your light the night is nameless
+</br></br>
+<b>Neptune</b>
+</br></br>
+I cast your name in ancient runes
+</br>
+And stand in awe of you Neptune
+</br>
+For you bring heavens spheres in tune
+</br>
+</br></br>
+<p><h8 style="font-size:170%">The Orphic Hymns:</h8>
+</br></br>Orpheus, an ancient Greek, wrote these poems to call the 7 planets known at that time.</br>
+<br><br>
+<p><h8 style="font-size:125%">The Orphic Hymn to Jupiter:</h8>
+<pre> 
+Recite the following Hymn to Jupiter: 
+O Jove much-honoured, Jove supremely great, 
+To thee our holy rites we consecrate, 
+Our prayers and expiations, king divine, 
+For all things round thy head exalted shine. 
+The earth is thine, and mountains swelling high, 
+The sea profound, and all within the sky. 
+Saturnian king, descending from above, 
+Magnanimous, commanding, sceptred Jove; 
+All-parent, principle and end of all, 
+Whose power almighty, shakes this earthly ball; 
+Even Nature trembles at thy mighty nod, 
+Loud-sounding, armed with lightning, thundering God. 
+Source of abundance, purifying king, 
+O various-formed from whom all natures spring; 
+Propitious hear my prayer, give blameless health, 
+With peace divine, and necessary wealth.
+</pre>
+<br><br>
+<p><h8 style="font-size:125%">The Orphic Hymn to Mars:</h8>
+<pre>
+Recite the following Hymn to Mars: 
+Magnanimous, unconquer'd, boistrous Mars, 
+In darts rejoicing, and in bloody wars 
+Fierce and untam'd, whose mighty pow'r can make 
+The strongest walls from their foundations shake: 
+Mortal destroying king, defil'd with gore, 
+Pleas'd with war's dreadful and tumultuous roar: 
+Thee, human blood, and swords, and spears delight, 
+And the dire ruin of mad savage fight. 
+Stay, furious contests, and avenging strife, 
+Whose works with woe, embitter human life; 
+To lovely Venus, and to Bacchus yield, 
+To Ceres give the weapons of the field; 
+Encourage peace, to gentle works inclin'd, 
+And give abundance, with benignant mind. 
+</pre>
+</br></br>
+<p><h8 style="font-size:125%">The Orphic Hymn to the Sun:</h8>
+<pre>
+Recite the following Hymn to the Sun: 
+Hear golden Titan, whose eternal eye 
+With broad survey, illumines all the sky. 
+Self-born, unwearied in diffusing light, 
+And to all eyes the mirror of delight: 
+Lord of the seasons, with thy fiery car 
+And leaping coursers, beaming light from far: 
+With thy right hand the source of morning light, 
+And with thy left the father of the night. 
+Agile and vigorous, venerable Sun, 
+Fiery and bright around the heavens you run. 
+Foe to the wicked, but the good man's guide, 
+O'er all his steps propitious you preside: 
+With various founding, golden lyre, 'tis mine 
+To fill the world with harmony divine. 
+Father of ages, guide of prosperous deeds, 
+The world's commander, borne by lucid steeds, 
+Immortal Jove, all-searching bearing light, 
+Source of existence, pure and fiery bright 
+Bearer of fruit, almighty lord of years, 
+Agile and warm, whom every power reveres. 
+Great eye of Nature and the starry skies, 
+Doomed with immortal flames to set and rise 
+Dispensing justice, lover Of the stream, 
+The world's great despot, and over all supreme. 
+Faithful defender, and the eye of right, 
+Of steeds the ruler, and of life the light: 
+With founding whip four fiery steeds you guide, 
+When in the car of day you glorious ride. 
+Propitious on these mystic labours shine, 
+And bless thy supplicants With a life divine. 
+</pre>
+</br></br>
+<p><h8 style="font-size:125%">The Orphic Hymn to Venus:</h8>
+<pre> 
+Recite the following Hymn to Venus: 
+Heavenly, illustrious, laughter-loving queen, 
+Sea-born, night-loving, of an awful mien; 
+Crafty, from whom necessity first came, 
+Producing, nightly, all-connecting dame: 
+Tis thine the world with harmony to join, 
+For all things spring from thee, O power divine. 
+The triple Fates are ruled by thy decree, 
+And all productions yield alike to thee: 
+Whatever the heavens, encircling all contain, 
+Earth fruit-producing, and the stormy main, 
+Thy sway confesses, and obeys thy nod, 
+Awful attendant of the brumal God: 
+Goddess of marriage, charming to the sight, 
+Mother of Loves, whom banquetings delight; 
+Source of persuasion, secret, favouring queen, 
+Illustrious born, apparent and unseen: 
+Spousal, lupercal, and to men inclined, 
+Prolific, most-desired, life-giving, kind: 
+Great sceptre-bearer of the Gods, tis thine, 
+Mortals in necessary bands to join; 
+And every tribe of savage monsters dire 
+In magic chains to bind, thro mad desire. 
+Come, Cyprus-born, and to my prayer incline, 
+Whether exalted in the heavens you shine, 
+Or pleased in Syrias temple to preside, 
+Or over the Egyptian plains thy car to guide, 
+Fashioned of gold; and near its sacred flood, 
+Fertile and famed to fix thy blest abode; 
+Or if rejoicing in the azure shores, 
+Near where the sea with foaming billows roars, 
+Ihe circling choirs of mortals, thy delight, 
+Or beauteous nymphs, with eyes cerulean bright, 
+Pleased by the dusty banks renowned of old, 
+To drive thy rapid, two-yoked car of gold; 
+Or if in Cyprus with thy mother fair, 
+Where married females praise thee every year, 
+And beauteous virgins in the chorus join, 
+Adonis pure to sing and thee divine; 
+Come, all-attractive to my prayer inclined, 
+For thee, I call, with holy, reverent mind. 
+</pre>
+</br></br>
+<p><h8 style="font-size:125%">The Orphic Hymn to Mercury:</h8>
+<pre>
+Recite the following Hymn to Mercury: 
+Hermes, draw near, and to my prayer incline, 
+Angel of Jove, and Maia's son divine; 
+Studious of contests, ruler of mankind, 
+With heart almighty, and a prudent mind. 
+Celestial messenger, of various skill, 
+Whose powerful arts could watchful Argus kill: 
+With winged feet, tis thine thro air to course, 
+O friend of man, and prophet of discourse: 
+Great life-supporter, to rejoice is thine, 
+In arts gymnastic, and in fraud divine: 
+With power endued all language to explain, 
+Ofcare the loosener, and the source of gain. 
+Whose hand contains of blameless peace the rod, 
+Corucian, blessed, profitable God; 
+Of various speech, whose aid in works we find, 
+And in necessities to mortals kind: 
+Dire weapon of the tongue, which men revere, 
+Be present, Hermes, and thy suppliant hear; 
+Assist my works, conclude my life with peace, 
+Give graceful speech, and me memory's increase. 
+</pre>
+<br><br>
+<p><h8 style="font-size:125%">The Orphic Hymn to The Moon:</h8>
+<pre> 
+Recite the following Hymn to the Moon: 
+Hear, Goddess queen, diffusing silver light, 
+Bull-horned and wandering thro the gloom of Night. 
+With stars surrounded, and with circuit wide 
+Nights torch extending, thro the heavens you ride: 
+Female and Male With borrowed rays you shine, 
+And now full-orbed, now tending to decline. 
+Mother of ages, fruit-producing Moon, 
+Whose amber orb makes Nights reflected noon: 
+Lover of horses, splendid, queen of Night, 
+All-seeing power bedecked with starry light. 
+Lover of vigilance, the foe ofstrife, 
+In peace rejoicing, and a prudent life: 
+Fair lamp of Night, its ornament and friend, 
+Who gives to Natures works their destined end. 
+Queen of the stars, all-wife Diana hail! 
+Decked with a graceful robe and shining veil; 
+Come, blessed Goddess, prudent, starry, bright, 
+Come moony-lamp with chaste and splendid light, 
+Shine on these sacred rites with prosperous rays, 
+And pleased accept thy suppliants mystic praise. 
+</br>
+</br>
+<p><h8 style="font-size:125%">The Orphic Hymn to Saturn:</h8>
+<pre>
+Recite the following Hymn to Saturn: 
+Ethereal father, mighty Titan, hear, 
+Great fire of Gods and men, whom all revere: 
+Endowed with various council, pure and strong, 
+To whom perfection and decrease belong. 
+Consumed by thee all forms that hourly die, 
+By thee restored, their former place supply; 
+The world immense in everlasting chains, 
+Strong and ineffable thy power contains 
+Father of vast eternity, divine, 
+O mighty Saturn, various speech is thine: 
+Blossom of earth and of the starry skies, 
+Husband of Rhea, and Prometheus wife. 
+Obstetric Nature, venerable root, 
+From which the various forms of being shoot; 
+No parts peculiar can thy power enclose, 
+Diffused thro' all, from which the world arose, 
+O, best of beings, of a subtle mind, 
+Propitious hear to holy prayers inclined; 
+The sacred rites benevolent attend, 
+And grant a blameless life, a blessed end. 
+<pre>
+</br></br>
+
+	</div>
+</div>
+{% endblock %}

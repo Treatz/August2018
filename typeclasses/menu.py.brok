@@ -1,0 +1,323 @@
+from evennia.utils.evmenu import EvMenu
+from evennia.contrib.dice import roll_dice
+from evennia import create_script
+from timeit import default_timer as timer
+
+damage = 0
+
+# Menu implementing the dialogue tree
+def exit_combat(caller):
+    caller.execute_cmd('Exit')
+
+def attack_node(caller):
+    if(caller.db.bashing == 0):
+        caller.msg(prompt="|X|[wHealth: O O O O O O O (Healthy)")
+    if (caller.db.bashing == 1):
+        caller.msg(prompt="|X|[wHealth: / O O O O O O (Bruised)")
+    if (caller.db.bashing == 2):
+        caller.msg(prompt="|X|[wHealth: / / O O O O O (Hurt)")
+    if (caller.db.bashing == 3):
+        caller.msg(prompt="|X|[wHealth: / / / O O O O (Injured)")
+    if (caller.db.bashing == 4):
+        caller.msg(prompt="|X|[wHealth: / / / / O O O (Wounded)")
+    if (caller.db.bashing == 5):
+        caller.msg(prompt="|X|[wHealth: / / / / / O O (Mauled)")
+    if (caller.db.bashing == 6):
+        caller.msg(prompt="|X|[wHealth: / / / / / / O (Crippled)")
+    if (caller.db.bashing == 7):
+        caller.msg(prompt="|X|[wHealth: / / / / / / / (Incapacitated)")
+
+    if (caller.db.target.db.bashing == 0):
+        caller.db.target.msg(prompt="|X|[wHealth: O O O O O O O (Healthy)")
+    if (caller.db.target.db.bashing == 1):
+        caller.db.target.msg(prompt="|X|[wHealth: / O O O O O O (Bruised)")
+    if (caller.db.target.db.bashing == 2):
+        caller.db.target.msg(prompt="|X|[wHealth: / / O O O O O (Hurt)")
+    if (caller.db.target.db.bashing == 3):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / O O O O (Injured)")
+    if (caller.db.target.db.bashing == 4):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / O O O (Wounded)")
+    if (caller.db.target.db.bashing == 5):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / / O O (Mauled)")
+    if (caller.db.target.db.bashing == 6):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / / / O (Crippled)")
+    if (caller.db.target.db.bashing == 7):
+        caller.msg(prompt="|X|[wHealth: / / / / / / / (Incapacitated)")
+
+
+    caller.db.start_time = timer()
+
+    attack_script = create_script("typeclasses.attackwait.AttackTime", obj=caller)
+    attack_script.attacker(caller)
+    attack_script.target(caller.db.target)
+    text = ""
+
+    options = ({"key": "|ypunch",
+                "desc": "Punch %s" % caller.db.target,
+                "goto": "wait",
+                "exec": "punch"},
+               {"key": "|ykick",
+                "desc": "Kick %s" % caller.db.target,
+                "goto": "wait",
+                "exec": "kick"},
+               {"key": "|yflee",
+                "desc": "Run away.",
+                "goto": "wait",
+                "exec": "flee"},
+               {"key": "|yskip",
+                "desc": "Do nothing",
+                "goto": "skip_attack"})
+
+    return text, options
+
+def punch(caller):
+    test = caller.db.dexterity + caller.db.brawl
+    counter = 0
+    attackpoints = 0
+    while(counter < test):
+        counter = counter + 1
+        roll = roll_dice(1,10)
+        if(roll >= 6):
+            attackpoints = attackpoints + 1
+
+    global damage
+    damage = attackpoints
+
+    hit = caller.db.strength
+    counter = 0
+    attackpoints2 = 0
+    while (counter < hit):
+        counter = counter + 1
+        roll = roll_dice(1, 10)
+        if (roll >= 6):
+            attackpoints2 = attackpoints2 + 1
+
+    global damage2
+    damage2 = attackpoints2
+
+    caller.db.start_time = 99999999999999999999999
+    if (attackpoints > 0):
+        caller.msg("|/|gYou punch %s with %i success out of %i dice. " % (caller.db.target, attackpoints, test))
+        caller.db.target.msg("|/|g%s attempts to punch you with %i successes." % (caller, attackpoints))
+        EvMenu(caller.db.target, "typeclasses.menu", startnode="defend_node", auto_quit=False, cmd_on_exit=None)
+    else:
+        caller.msg("|/|gYou miss %s." % caller.db.target)
+        caller.db.target.msg("|/|g%s punches, but misses you." % caller)
+        EvMenu(caller.db.target, "typeclasses.menu", startnode="attack_node", auto_quit=False, cmd_on_exit=None)
+    text = ""
+    options = ({"key": "skip",
+                "goto": "skip_attack"})
+    return text, options
+
+
+def kick(caller):
+    test = caller.db.dexterity + caller.db.brawl
+    counter = 0
+    attackpoints = 0
+    while (counter < test):
+        counter = counter + 1
+        roll = roll_dice(1, 10)
+        if (roll >= 6):
+            attackpoints = attackpoints + 1
+
+    caller.db.start_time = 99999999999999999999999
+    if (attackpoints > 0):
+        caller.msg("|/|gYou kick %s with %i success out of %i dice. " % (caller.db.target, attackpoints, test))
+        caller.db.target.msg("|/|g%s attemptss to kick you with %i successes." % (caller, attackpoints))
+        EvMenu(caller.db.target, "typeclasses.menu", startnode="defend_node", auto_quit=False, cmd_on_exit=None)
+    else:
+        caller.msg("|/|gYou fail to kick %s." % caller.db.target)
+        caller.db.target.msg("|/|g%s tries to kick you but fails." % caller)
+        EvMenu(caller.db.target, "typeclasses.menu", startnode="attack_node",auto_quit=False, cmd_on_exit=None)
+
+    text = ""
+    options = ({"key": "skip",
+                "goto": "skip_attack"})
+    return text, options
+
+
+
+def wait(caller):
+    caller.db.start_time = 99999999999999999999999
+    text = ""
+    options = {"key": "_default",
+               "goto": "wait"}
+    return text, options
+
+def skip_attack(caller):
+    caller.db.start_time = 99999999999999999999999
+    EvMenu(caller.db.target, "typeclasses.menu", startnode="attack_node",auto_quit=False, cmd_on_exit=None)
+    text = "|r You have skipped your turn!"
+    options = {"key": "_default",
+               "goto": "wait"}
+    return text, options
+
+def skip_defend(caller):
+    caller.db.start_time = 99999999999999999999999
+    caller.msg("|/|rYou have been hit by %s.|/" % caller.db.target)
+    caller.db.target.msg("|/|r%s has skipped his turn.|/" % caller)
+    EvMenu(caller.db.target, "typeclasses.menu", startnode="attack_node",auto_quit=False, cmd_on_exit=None)
+    text = "|r You have skipped your turn!"
+    options = {"key": "_default",
+               "goto": "wait"}
+    return text, options
+
+def defend_node(caller):
+    if(caller.db.bashing == 0):
+        caller.msg(prompt="|X|[wHealth: O O O O O O O (Healthy)")
+    if (caller.db.bashing == 1):
+        caller.msg(prompt="|X|[wHealth: / O O O O O O (Bruised)")
+    if (caller.db.bashing == 2):
+        caller.msg(prompt="|X|[wHealth: / / O O O O O (Hurt)")
+    if (caller.db.bashing == 3):
+        caller.msg(prompt="|X|[wHealth: / / / O O O O (Injured)")
+    if (caller.db.bashing == 4):
+        caller.msg(prompt="|X|[wHealth: / / / / O O O (Wounded)")
+    if (caller.db.bashing == 5):
+        caller.msg(prompt="|X|[wHealth: / / / / / O O (Mauled)")
+    if (caller.db.bashing == 6):
+        caller.msg(prompt="|X|[wHealth: / / / / / / O (Crippled)")
+    if (caller.db.bashing == 7):
+        caller.msg(prompt="|X|[wHealth: / / / / / / / (Incapacitated)")
+
+    if (caller.db.target.db.bashing == 0):
+        caller.db.target.msg(prompt="|X|[wHealth: O O O O O O O (Healthy)")
+    if (caller.db.target.db.bashing == 1):
+        caller.db.target.msg(prompt="|X|[wHealth: / O O O O O O (Bruised)")
+    if (caller.db.target.db.bashing == 2):
+        caller.db.target.msg(prompt="|X|[wHealth: / / O O O O O (Hurt)")
+    if (caller.db.target.db.bashing == 3):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / O O O O (Injured)")
+    if (caller.db.target.db.bashing == 4):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / O O O (Wounded)")
+    if (caller.db.target.db.bashing == 5):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / / O O (Mauled)")
+    if (caller.db.target.db.bashing == 6):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / / / O (Crippled)")
+    if (caller.db.target.db.bashing == 7):
+        caller.db.target.msg(prompt="|X|[wHealth: / / / / / / / (Incapacitated)")
+
+
+    caller.db.target.start_time = timer()
+
+    defend_script = create_script("typeclasses.defendwait.DefendTime", obj=caller)
+    defend_script.attacker(caller)
+    defend_script.target(caller.db.target)
+
+    text = ""
+    options = ({"key": "|ydodge",
+                "desc": "Avoid the attack.",
+                "goto": "wait",
+                "exec": "dodge"},
+               {"key": "|yblock",
+                "desc": "Block the attack.",
+                "goto": "wait",
+                "exec": "block"},
+               {"key": "|yskip",
+                "desc": "Do nothing.",
+                "goto": "skip_defend"})
+
+    return text, options
+
+def dodge(caller):
+    test = caller.db.dexterity + caller.db.athletics
+    soak = caller.db.stamina
+    counter = 0
+    defendpoints = 0
+    while (counter < test):
+        counter = counter + 1
+        roll = roll_dice(1, 10)
+        if (roll >= 6):
+            defendpoints = defendpoints + 1
+
+    counter = 0
+    soakpoints = 0
+    while (counter < soak):
+        counter = counter + 1
+        roll = roll_dice(1,10)
+        if (roll >= 6):
+            soakpoints = soakpoints + 1
+
+    caller.db.start_time = 99999999999999999999999
+    if (defendpoints > 0):
+
+        tst = damage2
+        dmg2 = damage
+        dmg = damage
+        cnt2 = 0
+        while (cnt2 < tst):
+            cnt2 = cnt2 + 1
+            roll = roll_dice(1, 10)
+            if (roll >= 6):
+                dmg = dmg + 1
+
+        reduced =  dmg - defendpoints + tst
+        if(reduced < 0):
+            reduced = 0
+        if(soakpoints > reduced):
+            soakpoints = reduced
+        if(defendpoints > dmg2):
+            defendpoints = dmg2
+        caller.msg("|/|gYou dodge %i out of %i of %s's attack points." % (defendpoints, dmg2, caller.db.target, test))
+        caller.msg("|/|g%s causes %i points of damage to you.." % (caller.db.target, reduced, dmg))
+        if (soakpoints > 0):
+            caller.msg("|/|gYou soak %i out of %i points of bashing damage." % (soakpoints, reduced))
+        if (reduced - soakpoints > 0):
+            caller.msg("|/|gYou lose a total of %i health points." % (reduced - soakpoints))
+            caller.db.bashing = caller.db.bashing + (reduced - soakpoints)
+        caller.db.target.msg("|/|g%s dodges %i points of your attack." % (caller, defendpoints))
+        caller.db.target.msg("|/|gYou deal %i points of damage with your punch." % (reduced, dmg))
+
+        if(soakpoints>0):
+            caller.db.target.msg("|/|g%s soaks %i points of damage from your punch." % (caller, soakpoints))
+        if(reduced-soakpoints > 0):
+            caller.db.target.msg("|/|g%s loses a total of %i hit points." % (caller, reduced - soakpoints))
+
+
+    EvMenu(caller, "typeclasses.menu", startnode="attack_node", auto_quit=False, cmd_on_exit=None)
+    text = ""
+    options = ({"key": "skip",
+                "goto": "skip_attack"})
+    return text, options
+
+
+def block(caller):
+    attack_roll = roll_dice(3, 6)
+    #caller.db.target.start_time = timer()
+    caller.db.start_time = 99999999999999999999999
+    if (attack_roll <= caller.db.dexterity):
+        caller.msg("|/|gYou block %s's attack." % caller.db.target)
+        caller.db.target.msg("|/|g%s blocks your attack." % caller)
+    else:
+        caller.msg("|/|rYou have been hit by %s." % caller.db.target)
+        caller.db.target.msg("|/|r%s fails to block your attack." % caller)
+
+    EvMenu(caller, "typeclasses.menu", startnode="attack_node",auto_quit=False, cmd_on_exit=None)
+    text = ""
+    options = ({"key": "skip",
+                "goto": "skip_attack"})
+    return text, options
+
+
+def flee(caller):
+    caller.db.start_time = 99999999999999999999999
+    caller.msg("|/|rYou flee from combat!|/|/")
+    caller.db.target.msg("|/|r%s flees from combat|/|/" % caller)
+    caller.db.target.ndb._menutree.close_menu()
+    caller.ndb._menutree.close_menu()
+    caller.msg("TEST: %s" % caller.db.target)
+    caller.execute_cmd('look')
+    caller.db.target.execute_cmd('look')
+    text = ""
+    options = ()
+    return text, options
+
+def END(caller):
+    caller.msg("EXIT COMBAT")
+    caller.db.target.msg("EXIT COMBAT")
+    caller.ndb._menutree.close_menu()
+    caller.db.target.ndb._menutree.close_menu()
+
+    text = ""
+    options = ()
+    return text, options

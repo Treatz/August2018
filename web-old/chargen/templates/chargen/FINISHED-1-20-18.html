@@ -1,0 +1,2551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>Cake Form</title>
+    <script type="text/javascript">/*f
+This source is shared under the terms of LGPL 3
+www.gnu.org/licenses/lgpl.html
+
+You are free to use the code in Commercial or non-commercial projects
+*/
+var physicalXP=0;
+var socialXP=0;
+var mentalXP=0;
+var talentXP=0;
+var skillXP=0;
+var sphereXP=0;
+var knowledgeXP=0;
+var advXP=0;
+var advXP=0;
+var globalArete = 0;
+var globalWill = 0;
+var str = "Strength";
+var dex = "Dexterity";
+var sta = "Stamina";
+var cha = "Charisma";
+var man = "Manipulation";
+var app = "Appearance";
+var per = "Perception";
+var int = "Intelligence";
+var wit = "Wits";
+var sphere1 = "Correspondence";
+var sphere2 = "Life";
+var sphere3 = "Prime";
+var sphere4 = "Entropy"
+var sphere5 = "Matter"
+var sphere6 = "Spirit"
+var sphere7 = "Forces"
+var sphere8 = "Mind"
+var sphere9 = "Time"
+var will = "Willpower"
+var art = "Arete"
+var avtr = "Avatar"
+var arc = "Arcane"
+var qui = "Quintessence"
+var bel = "Belief"
+var fam = "Familiar"
+var luc = "Luck";
+var res = "Resources"
+var Awareness = "Awareness";
+var Alertness = "Alertness";
+var Athletics = "Athletics";
+var Brawl = "Brawl";
+var Intimidation = "Intimidation";
+var Streetwise = "Streetwise";
+var Drive = "Drive"
+var Firearms = "Firearms";
+var MartialArts = "Martial Arts";
+var Melee = "Melee";
+var Meditation = "Meditation";
+var Stealth = "Stealth";
+var Astrology = "Astrology";
+var Computer = "Computer";
+var Language= "Language";
+var Medicine= "Medicine";
+var Occult = "Occult";
+var Rituals = "Ritual";
+var lastcheck = 0;
+compStr = 0;
+compDex = 0;
+compSta = 0;
+compCha = 0;
+compMan = 0;
+compApp = 0;
+compPer = 0;
+compInt = 0;
+compWit = 0;
+compSp1 = 0;
+compSp2 = 0;
+compSp3 = 0;
+compSp4 = 0;
+compSp5 = 0;
+compSp6 = 0;
+compSp7 = 0;
+compSp8 = 0;
+compSp9 = 0;
+compWil = 0;
+compArt = 0;
+compAva = 0;
+compArc = 0;
+compBel = 0;
+comFam = 0;
+comLuc = 0;
+compRes = 0;
+compQui = 0;
+compTest = 0;
+compTest1 = 0;
+    compTest2 = 0;
+    compTest3 = 0;
+    compTest4 = 0;
+    compTest5 = 0;
+    compTest6 = 0;
+    compTest7 = 0;
+    compTest8 = 0;
+    compTest9 = 0;
+    compTest10 = 0;
+    compTest11 = 0;
+    compTest12 = 0;
+    compTest13 = 0;
+    compTest14 = 0;
+    compTest15 = 0;
+    compTest16 = 0;
+    compTest17 = 0;
+ //Set up an associative array
+ //The keys represent the size of the cake
+ //The values represent the cost of the cake i.e A 10" cake cost's $35
+ var xp = new Array();
+ xp["Zero"]=-1;
+ xp["One"]=0;
+ xp["Two"]=1;
+ xp["Three"]=2;
+ xp["Four"]=3;
+ xp["Five"]=4;
+ xp["Six"]=5;
+ xp["Seven"]=1;
+ xp["Eight"]=2;
+ xp["Nine"]=3;
+ xp["Ten"]=4;
+ xp["Eleven"]=5;
+
+
+// getCakeSizePrice() finds the price based on the size of the cake.
+// Here, we need to take user's the selection from radio button selection
+function getphysical()
+{
+physicalXP = 0;
+socialXP = 0;
+mentalXP = 0;
+talentXP = 0;
+skillXP = 0;
+knowledgeXP = 0;
+sphereXP = 0;
+advXP = 0;
+advXP = 0;
+
+lastcheeck = 0;
+
+    //Get a reference to the form id="cakeform"
+    var theForm = document.cakeform;
+    //Get a reference to the cake the user Chooses name=selectedCake":
+    var Strength = theForm.elements["Strength"];
+    var Dexterity = theForm.elements["Dexterity"];
+    var Stamina = theForm.elements["Stamina"];
+    var Charisma = theForm.elements["Charisma"];
+    var Manipulation = theForm.elements["Manipulation"];
+    var Appearance = theForm.elements["Appearance"];
+    var Perception = theForm.elements["Perception"];
+    var Intelligence = theForm.elements["Intelligence"]
+    var Wits = theForm.elements["Wits"]
+    var formA = theForm.elements["Awareness"]
+    var formA1 = theForm.elements["Alertness"]
+    var formA2 = theForm.elements["Athletics"]
+    var formA3 = theForm.elements["Brawl"]
+    var formA4 = theForm.elements["Intimidation"]
+     var formA5 = theForm.elements["Streetwise"]
+    var formB = theForm.elements["Drive"]
+    var formB1 = theForm.elements["Firearms"]
+    var formB2 = theForm.elements["Martial Arts"]
+    var formB3 = theForm.elements["Melee"]
+    var formB4 = theForm.elements["Meditation"]
+     var formB5 = theForm.elements["Stealth"]
+    var formC = theForm.elements["Astrology"]
+    var formC1 = theForm.elements["Computer"]
+    var formC2 = theForm.elements["Language"]
+    var formC3 = theForm.elements["Medicine"]
+    var formC4 = theForm.elements["Occult"]
+    var formC5 = theForm.elements["Rituals"]
+    var Correspondence = theForm.elements["Correspondence"]
+    var Life = theForm.elements["Life"]
+    var Prime = theForm.elements["Prime"]
+    var Entropy = theForm.elements["Entropy"];
+    var Matter = theForm.elements["Matter"];
+    var Spirit = theForm.elements["Spirit"];
+    var Forces = theForm.elements["Forces"];
+    var Mind = theForm.elements["Mind"];
+    var Time = theForm.elements["Time"];
+    var Willpower = theForm.elements["Willpower"];
+    var Arete = theForm.elements["Arete"];
+    var Avatar = theForm.elements["Avatar"];
+    var Quintessence = theForm.elements["Quintessence"]
+    var Arcane = theForm.elements["Arcane"]
+    var Belief = theForm.elements["Belief"]
+    var Familiar = theForm.elements["Familiar"]
+    var Luck = theForm.elements["Luck"]
+    var Resources = theForm.elements["Resources"]
+
+    //Here since there are 4 radio buttons selectedCake.length = 4
+    //We loop through each radio buttons
+    for(var i = 0; i < 5; i++)
+    {
+        //if the radio button is checked
+        if(Strength[i].checked)
+        {
+            physicalXP = physicalXP + xp[Strength[i].value];
+            compStr = xp[Strength[i].value];
+
+
+
+        }
+
+        if(Dexterity[i].checked)
+        {
+            physicalXP = physicalXP + xp[Dexterity[i].value];
+            compDex = xp[Dexterity[i].value];
+        }
+
+        if(Stamina[i].checked)
+        {
+            physicalXP = physicalXP + xp[Stamina[i].value];
+            compSta = xp[Stamina[i].value];
+
+        }
+        if(Charisma[i].checked)
+        {
+            socialXP = socialXP + xp[Charisma[i].value];
+            compCha = xp[Charisma[i].value];
+
+         }
+         if(Manipulation[i].checked)
+        {
+            socialXP = socialXP + xp[Manipulation[i].value];
+            compMan = xp[Manipulation[i].value];
+
+         }
+         if(Appearance[i].checked)
+        {
+            socialXP = socialXP + xp[Appearance[i].value];
+            compApp = xp[Appearance[i].value];
+
+         }
+         if(Perception[i].checked)
+        {
+            mentalXP = mentalXP + xp[Perception[i].value];
+            compPer = xp[Perception[i].value];
+
+         }
+         if(Intelligence[i].checked)
+        {
+            mentalXP = mentalXP + xp[Intelligence[i].value];
+            compInt = xp[Intelligence[i].value];
+         }
+         if(Wits[i].checked)
+        {
+            mentalXP = mentalXP + xp[Wits[i].value];
+            compWit = xp[Wits[i].value];
+
+         }
+
+    }
+
+    for(var i = 0; i < 6; i++)
+    {
+            if(formA[i].checked)
+        {
+            talentXP = talentXP + xp[formA[i].value];
+            compTest = xp[formA[i].value];
+
+         }
+         if(formA1[i].checked)
+        {
+            talentXP = talentXP + xp[formA1[i].value];
+            compTest1 = xp[formA1[i].value];
+
+         }
+          if(formA2[i].checked)
+        {
+            talentXP = talentXP + xp[formA2[i].value];
+            compTest2 = xp[formA2[i].value];
+
+         }
+           if(formA3[i].checked)
+        {
+            talentXP = talentXP + xp[formA3[i].value];
+            compTest3 = xp[formA3[i].value];
+
+         }
+         if(formA4[i].checked)
+        {
+            talentXP = talentXP + xp[formA4[i].value];
+            compTest4 = xp[formA4[i].value];
+
+         }
+         if(formA5[i].checked)
+        {
+            talentXP = talentXP + xp[formA5[i].value];
+            compTest5 = xp[formA5[i].value];
+
+         }
+         if(formB[i].checked)
+        {
+            skillXP = skillXP + xp[formB[i].value];
+            compTest6 = xp[formB[i].value];
+
+         }
+         if(formB1[i].checked)
+        {
+            skillXP = skillXP + xp[formB1[i].value];
+            compTest7 = xp[formB1[i].value];
+
+         }
+         if(formB2[i].checked)
+        {
+            skillXP = skillXP + xp[formB2[i].value];
+            compTest8 = xp[formB2[i].value];
+
+         }
+         if(formB3[i].checked)
+        {
+            skillXP = skillXP + xp[formB3[i].value];
+            compTest9 = xp[formB3[i].value];
+
+         }
+         if(formB4[i].checked)
+        {
+            skillXP = skillXP + xp[formB4[i].value];
+            compTest10 = xp[formB4[i].value];
+
+         }
+         if(formB5[i].checked)
+        {
+            skillXP = skillXP + xp[formB5[i].value];
+            compTest11 = xp[formB5[i].value];
+
+         }
+                  if(formC[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC[i].value];
+            compTest12 = xp[formC[i].value];
+
+         }
+         if(formC1[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC1[i].value];
+            compTest13 = xp[formC1[i].value];
+
+         }
+         if(formC2[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC2[i].value];
+            compTest14 = xp[formC2[i].value];
+
+         }
+          if(formC3[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC3[i].value];
+            compTest15 = xp[formC3[i].value];
+
+         }
+         if(formC4[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC4[i].value];
+            compTest16 = xp[formC4[i].value];
+
+         }
+         if(formC5[i].checked)
+        {
+            knowledgeXP = knowledgeXP + xp[formC5[i].value];
+            compTest17 = xp[formC5[i].value];
+
+         }
+ 
+         if(Correspondence[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp1 = i; 
+
+          }
+
+         }
+         if(Life[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp2 = i; 
+          }
+
+         }
+         if(Prime[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp3 = i; 
+          }
+
+         }
+         if(Entropy[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp4 = i; 
+          }
+
+         }
+         if(Matter[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp5 = i; 
+          }
+
+         }
+         if(Spirit[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp6 = i; 
+          }
+         }
+         if(Forces[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp7 = i; 
+          }
+         }
+         if(Mind[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp8 = i; 
+          }
+         }
+        if(Time[i].checked){
+          if(i<globalArete){
+            sphereXP = sphereXP + i;
+            compSp9 = i; 
+         }
+       }
+
+       if(Avatar[i].checked){
+        advXP = advXP + i;
+        compAva = i;
+       }
+
+       if(Arcane[i].checked)
+        {
+            advXP = advXP + i;
+            compArc = i;
+
+
+
+        }
+        if(Belief[i].checked)
+        {
+            advXP = advXP + i;
+            compBel = i;
+
+        }
+        if(Familiar[i].checked)
+        {
+            advXP = advXP + i;
+            compFam = i;
+
+        }
+
+        if(Luck[i].checked)
+        {
+            advXP = advXP + i;
+            compLuc = i;
+
+        }
+        if(Resources[i].checked)
+        {
+            advXP = advXP + i;
+            compRes = i;
+
+        }
+
+
+
+    }
+
+for(var i = 0; i<10; i++){
+  if(Arete[i].checked){
+          advXP = advXP + i*3;
+         
+          compArt = i;
+
+        }
+}
+for(var i = 0; i < 10; i++)
+    {
+        
+        if(Willpower[i].checked){
+            compWil = i;
+         
+            if(i==5){
+            
+                advXP = advXP + 5;
+
+            }
+            else if(i==6){
+                advXP = advXP +11;
+            }
+            else if(i==7){
+            
+                document.cakeform.Willpower[6].checked=true; 
+                advXP = advXP +11;
+            }
+                  else if(i==8){
+          
+                document.cakeform.Willpower[6].checked=true;
+                advXP = advXP +11;
+            }
+                  else if(i==9){
+       
+                document.cakeform.Willpower[6].checked=true;
+                advXP = advXP +11;
+            }
+                  else if(i==10){
+
+                document.cakeform.Willpower[6].checked=true;
+                advXP = advXP +11;
+            }
+            
+            
+            if(i<5){
+            document.getElementById('wil5').click();
+
+            }
+
+    }
+
+
+    }
+
+
+}
+
+
+
+function jumpStart(obj)
+{
+    //Here we get the total price by calling our function
+    //Each function returns a number so by calling them we add the values they return together
+    getphysical();
+    //display the result
+
+
+var e = document.getElementById("Alignment");
+var myvar = e.options[e.selectedIndex].value;
+var fire = parseInt(myvar);
+
+var e2 = document.getElementById("Alignment2");
+var myvar2 = e2.options[e2.selectedIndex].value;
+var fire2 = parseInt(myvar2);
+
+var e3 = document.getElementById("Alignment3");
+var myvar3 = e3.options[e3.selectedIndex].value;
+var fire3 = parseInt(myvar3);
+
+var e4 = document.getElementById("Alignment4");
+var myvar4 = e4.options[e4.selectedIndex].value;
+var fire4 = parseInt(myvar4);
+
+var e5 = document.getElementById("Alignment5");
+var myvar5 = e5.options[e5.selectedIndex].value;
+var fire5 = parseInt(myvar5);
+
+var e6 = document.getElementById("Alignment6");
+var myvar6 = e6.options[e6.selectedIndex].value;
+var fire6 = parseInt(myvar6);
+
+if(obj == avtr){
+
+           if(advXP >12){
+          advXP = advXP - compAva;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Avatar[counter].checked=true;
+
+
+            }
+
+ if(document.cakeform.Avatar[1].checked){
+      document.cakeform.Quintessence[1].checked=true;
+  }
+    if(document.cakeform.Avatar[2].checked){
+document.cakeform.Quintessence[2].checked=true;
+  }
+    if(document.cakeform.Avatar[3].checked){
+    document.cakeform.Quintessence[3].checked=true;
+
+  }
+    if(document.cakeform.Avatar[4].checked){
+      document.cakeform.Quintessence[4].checked=true;
+
+  }
+    if(document.cakeform.Avatar[5].checked){
+      document.cakeform.Quintessence[5].checked=true;
+
+  }
+ 
+
+}
+if(obj == sphere1){
+
+    if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp1;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Correspondence[counter].checked=true;
+    }
+        if(document.cakeform.Correspondence[5].checked && globalArete < 6){
+        document.cakeform.Correspondence[4].checked=true; 
+        } 
+        if(document.cakeform.Correspondence[4].checked && globalArete < 5){
+        document.cakeform.Correspondence[3].checked=true; 
+        }
+        if(document.cakeform.Correspondence[3].checked && globalArete < 4){
+        document.cakeform.Correspondence[2].checked=true; 
+        }   
+        if(document.cakeform.Correspondence[2].checked && globalArete < 3){
+        document.cakeform.Correspondence[1].checked=true; 
+        }
+        if(document.cakeform.Correspondence[1].checked && globalArete < 2){
+        document.cakeform.Correspondence[0].checked=true; 
+        }
+     
+
+
+}
+if(obj == sphere2){
+
+    if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp2;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Life[counter].checked=true;
+    }
+
+ if(document.cakeform.Life[5].checked && globalArete < 6){
+        document.cakeform.Life[4].checked=true; 
+        } 
+        if(document.cakeform.Life[4].checked && globalArete < 5){
+        document.cakeform.Life[3].checked=true; 
+        }
+        if(document.cakeform.Life[3].checked && globalArete < 4){
+        document.cakeform.Life[2].checked=true; 
+        }   
+        if(document.cakeform.Life[2].checked && globalArete < 3){
+        document.cakeform.Life[1].checked=true; 
+        }
+        if(document.cakeform.Life[1].checked && globalArete < 2){
+        document.cakeform.Life[0].checked=true; 
+        }    
+
+}
+
+if(obj == sphere3){
+
+    if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp3;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Prime[counter].checked=true;
+    }
+                if(document.cakeform.Prime[5].checked && globalArete < 6){
+        document.cakeform.Prime[4].checked=true; 
+        } 
+        if(document.cakeform.Prime[4].checked && globalArete < 5){
+        document.cakeform.Prime[3].checked=true; 
+        }
+        if(document.cakeform.Prime[3].checked && globalArete < 4){
+        document.cakeform.Prime[2].checked=true; 
+        }   
+        if(document.cakeform.Prime[2].checked && globalArete < 3){
+        document.cakeform.Prime[1].checked=true; 
+        }
+        if(document.cakeform.Prime[1].checked && globalArete < 2){
+        document.cakeform.Prime[0].checked=true; 
+        }
+
+}
+
+if(obj == sphere4){
+
+    if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp4;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Entropy[counter].checked=true;
+    }
+            if(document.cakeform.Entropy[5].checked && globalArete < 6){
+        document.cakeform.Entropy[4].checked=true; 
+        } 
+        if(document.cakeform.Entropy[4].checked && globalArete < 5){
+        document.cakeform.Entropy[3].checked=true; 
+        }
+        if(document.cakeform.Entropy[3].checked && globalArete < 4){
+        document.cakeform.Entropy[2].checked=true; 
+        }   
+        if(document.cakeform.Entropy[2].checked && globalArete < 3){
+        document.cakeform.Entropy[1].checked=true; 
+        }
+        if(document.cakeform.Entropy[1].checked && globalArete < 2){
+        document.cakeform.Entropy[0].checked=true; 
+        }
+
+}
+
+if(obj == sphere5){
+  if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp5;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Matter[counter].checked=true;
+    }
+
+        if(document.cakeform.Matter[5].checked && globalArete < 6){
+        document.cakeform.Matter[4].checked=true; 
+        } 
+        if(document.cakeform.Matter[4].checked && globalArete < 5){
+        document.cakeform.Matter[3].checked=true; 
+        }
+        if(document.cakeform.Matter[3].checked && globalArete < 4){
+        document.cakeform.Matter[2].checked=true; 
+        }   
+        if(document.cakeform.Matter[2].checked && globalArete < 3){
+        document.cakeform.Matter[1].checked=true; 
+        }
+        if(document.cakeform.Matter[1].checked && globalArete < 2){
+        document.cakeform.Matter[0].checked=true; 
+        }
+             
+}
+
+if(obj == sphere6){
+
+    if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp6;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Spirit[0].checked=true;
+    }
+
+        if(document.cakeform.Spirit[5].checked && globalArete < 6){
+        document.cakeform.Spirit[4].checked=true; 
+        } 
+        if(document.cakeform.Spirit[4].checked && globalArete < 5){
+        document.cakeform.Spirit[3].checked=true; 
+        }
+        if(document.cakeform.Spirit[3].checked && globalArete < 4){
+        document.cakeform.Spirit[2].checked=true; 
+        }   
+        if(document.cakeform.Spirit[2].checked && globalArete < 3){
+        document.cakeform.Spirit[1].checked=true; 
+        }
+        if(document.cakeform.Spirit[1].checked && globalArete < 2){
+        document.cakeform.Spirit[0].checked=true; 
+        }   
+                
+}
+
+if(obj == sphere7){
+if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp7;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Forces[counter].checked=true;
+    }
+
+        if(document.cakeform.Forces[5].checked && globalArete < 6){
+        document.cakeform.Forces[4].checked=true; 
+        } 
+        if(document.cakeform.Forces[4].checked && globalArete < 5){
+        document.cakeform.Forces[3].checked=true; 
+        }
+        if(document.cakeform.Forces[3].checked && globalArete < 4){
+        document.cakeform.Forces[2].checked=true; 
+        }   
+        if(document.cakeform.Forces[2].checked && globalArete < 3){
+        document.cakeform.Forces[1].checked=true; 
+        }
+        if(document.cakeform.Forces[1].checked && globalArete < 2){
+        document.cakeform.Forces[0].checked=true; 
+        }
+}
+
+if(obj == sphere8){
+
+if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp8;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Mind[counter].checked=true;
+    }
+
+         if(document.cakeform.Mind[5].checked && globalArete < 6){
+        document.cakeform.Mind[4].checked=true; 
+        } 
+        if(document.cakeform.Mind[4].checked && globalArete < 5){
+        document.cakeform.Mind[3].checked=true; 
+        }
+        if(document.cakeform.Mind[3].checked && globalArete < 4){
+        document.cakeform.Mind[2].checked=true; 
+        }   
+        if(document.cakeform.Mind[2].checked && globalArete < 3){
+        document.cakeform.Mind[1].checked=true; 
+        }
+        if(document.cakeform.Mind[1].checked && globalArete < 2){
+        document.cakeform.Mind[0].checked=true; 
+        }
+
+}
+
+if(obj == sphere9){
+
+if(sphereXP > 6){
+
+       sphereXP = sphereXP - compSp9;
+       var counter = 0;
+       var counter2 = sphereXP;
+       while(counter2 < 7){
+        counter2 = counter2 + 1;
+        counter = counter + 1;
+       } 
+       sphereXP = sphereXP + counter;
+
+       document.cakeform.Time[counter].checked=true;
+    }
+ 
+        if(document.cakeform.Time[5].checked && globalArete < 6){
+        document.cakeform.Time[4].checked=true; 
+        } 
+        if(document.cakeform.Time[4].checked && globalArete < 5){
+        document.cakeform.Time[3].checked=true; 
+        }
+        if(document.cakeform.Time[3].checked && globalArete < 4){
+        document.cakeform.Time[2].checked=true; 
+        }   
+        if(document.cakeform.Time[2].checked && globalArete < 3){
+        document.cakeform.Time[1].checked=true; 
+        }
+        if(document.cakeform.Time[1].checked && globalArete < 2){
+        document.cakeform.Time[0].checked=true; 
+        }
+}
+
+
+if(obj == art){
+
+
+    
+    if(advXP>12){
+
+   
+        var drop = 0;
+        if(compArt==1){
+           advXP = advXP - 3;
+            compArt=0;
+        }
+        if(compArt==2){
+           advXP = advXP - 3;
+            compArt=1;
+        }
+        if(compArt==3){
+           advXP = advXP - 3;
+            compArt=2;
+        }
+        if(compArt==4){
+            advXP = advXP - 3;
+            compArt=3;
+        }
+        if(compArt==5){
+            advXP = advXP -3;
+            compArt=4;
+        }
+        if(compArt==6){
+            advXP = advXP -6;
+            compArt=4;
+        }
+        if(compArt==7){
+            advXP = advXP -9;
+            compArt=4;
+        }
+        if(compArt==8){
+            advXP = advXP -12;
+            compArt=4;
+        }
+        if(compArt==9){
+            advXP = advXP -15;
+            compArt=4;
+        }
+        if(compArt==10){
+            advXP = advXP -18;
+            compArt=4;
+        }
+    
+
+       document.cakeform.Arete[compArt].checked=true;
+    }
+
+                if(document.getElementById('arete1').checked) {
+                    globalArete = 1;
+                   
+                }else if(document.getElementById('arete2').checked) {
+                    globalArete = 2;
+                    
+                }else if(document.getElementById('arete3').checked) {
+                    globalArete = 3;
+    
+                }else if(document.getElementById('arete4').checked) {
+                    globalArete = 4;
+                    
+                }else if(document.getElementById('arete5').checked) {
+                    globalArete = 5;
+                    
+                }else if(document.getElementById('arete6').checked) {
+                    globalArete = 6;
+                    
+                }else if(document.getElementById('arete7').checked) {
+                    globalArete = 7;
+                }
+
+
+}
+
+if(obj == will){
+        
+    if(advXP > 12){
+      
+            if(compWil==5){
+            document.cakeform.Willpower[4].checked=true;
+           advXP = advXP - compWil;
+            }
+            else if (compWil==6){
+            document.cakeform.Willpower[5].checked=true;
+            advXP = advXP - compWil;
+
+            }
+        
+
+       
+    }
+
+}
+
+ if(obj == arc){
+
+
+       if(advXP >12){
+          advXP = advXP - compArc;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Arcane[counter].checked=true;
+
+
+            }
+
+         }
+
+     if(obj == qui){
+
+        for (var i = 0; i < 10; i++) {
+       
+             if(document.cakeform.Avatar[i].checked){
+
+                document.cakeform.Quintessence[i].checked=true;
+             }
+
+
+        }
+
+         }
+
+if(obj == bel){
+
+
+          if(advXP >12){
+          advXP = advXP - compBel;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Belief[counter].checked=true;
+
+
+            }
+
+         }
+
+if(obj == fam){
+
+
+       if(advXP >12){
+          advXP = advXP - compFam;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Familiar[counter].checked=true;
+
+
+            }
+
+         }
+
+if(obj == luc){
+
+
+       if(advXP >12){
+          advXP = advXP - compLuc;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Luck[counter].checked=true;
+
+
+            }
+
+         }
+
+
+if(obj == res){
+
+
+       if(advXP >12){
+          advXP = advXP - compRes;
+          var counter = 0;
+          var counter2 = advXP;
+          while(counter2 < 12){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             advXP = advXP + counter;
+             document.cakeform.Resources[counter].checked=true;
+
+
+            }
+
+         }
+
+ if(obj == str){
+        if(physicalXP >fire){
+          physicalXP = physicalXP - compStr;
+          var counter = 0;
+          var counter2 = physicalXP;
+          while(counter2 < fire+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             physicalXP = physicalXP + counter;
+             document.cakeform.Strength[counter].checked=true;
+
+
+            }
+
+
+
+         }
+     else if(obj == dex){
+        if(physicalXP >fire){
+          physicalXP = physicalXP - compDex;
+          var counter = 0;
+          var counter2 = physicalXP;
+          while(counter2 < fire+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             physicalXP = physicalXP+counter;
+             document.cakeform.Dexterity[counter].checked=true;
+            }
+
+
+
+         }
+    else if(obj == sta){
+        if(physicalXP >fire){
+          physicalXP = physicalXP - compSta;
+          var counter = 0;
+          var counter2 = physicalXP;
+          while(counter2 < fire+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+            physicalXP = physicalXP+counter;
+             document.cakeform.Stamina[counter].checked=true;
+            }
+
+
+
+F         }
+
+     else if(obj == cha){
+        if(socialXP >fire2){
+          socialXP = socialXP - compCha;
+          var counter = 0;
+          var counter2 = socialXP;
+          while(counter2 < fire2+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+             socialXP = socialXP + counter;
+             document.cakeform.Charisma[counter].checked=true;
+            }
+
+
+     }
+
+     else if(obj == man){
+                if(socialXP >fire2){
+          socialXP = socialXP - compMan;
+          var counter = 0;
+          var counter2 = socialXP;
+          while(counter2 < fire2+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+              socialXP = socialXP + counter;
+             document.cakeform.Manipulation[counter].checked=true;
+            }
+
+     }
+
+     else if(obj == app){
+          if(socialXP >fire2){
+          socialXP = socialXP - compApp;
+          var counter = 0;
+          var counter2 = socialXP;
+          while(counter2 < fire2+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+              socialXP = socialXP + counter;
+             document.cakeform.Appearance[counter].checked=true;
+            }
+
+
+     }
+
+    else if(obj == per){
+          if(mentalXP >fire3){
+          mentalXP = mentalXP - compPer;
+          var counter = 0;
+          var counter2 = mentalXP;
+          while(counter2 < fire3+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+            mentalXP = mentalXP + counter;
+             document.cakeform.Perception[counter].checked=true;
+            }
+
+
+     }
+
+    else if(obj == int){
+          if(mentalXP >fire3){
+          mentalXP =  mentalXP - compInt;
+          var counter = 0;
+          var counter2 = mentalXP;
+          while(counter2 < fire3+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+            mentalXP = mentalXP + counter;
+             document.cakeform.Intelligence[counter].checked=true;
+            }
+
+
+
+     }
+    else if(obj == wit){
+          if(mentalXP >fire3){
+          mentalXP =  mentalXP - compWit;
+          var counter = 0;
+          var counter2 = mentalXP;
+          while(counter2 < fire3+1){
+            counter2 = counter2 + 1;
+            counter = counter + 1;
+          }
+          mentalXP = mentalXP+counter;
+             document.cakeform.Wits[counter].checked=true;
+            }
+     }
+
+
+
+ else if(obj == Awareness){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Awareness[counter].checked=true;
+     }
+ }
+
+ else if(obj == Alertness){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest1;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Alertness[counter].checked=true;
+     }
+ }
+
+ else if(obj == Athletics){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest2;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Athletics[counter].checked=true;
+     }
+ }
+
+ else if(obj == Brawl){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest3;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Brawl[counter].checked=true;
+     }
+ }
+
+ else if(obj == Intimidation){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest4;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Intimidation[counter].checked=true;
+     }
+ }
+ else if(obj == Streetwise){
+     if(talentXP >fire4){
+         talentXP =  talentXP - compTest5;
+         var counter = 0;
+         var counter2 = talentXP;
+         while(counter2 < fire4){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         talentXP = talentXP+counter;
+         document.cakeform.Streetwise[counter].checked=true;
+     }
+ }
+
+
+ else if(obj == Drive){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest6;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.Drive[counter].checked=true;
+     }
+ }
+
+ else if(obj == Firearms){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest7;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.FirearmsF[counter].checked=true;
+     }
+ }
+
+
+ else if(obj == MartialArts){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest8;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.MartialArts[counter].checked=true;
+     }
+ }
+
+ else if(obj == Melee){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest9;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.Melee[counter].checked=true;
+     }
+ }
+
+ else if(obj == Meditation){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest10;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.Meditation[counter].checked=true;
+     }
+ }
+
+ else if(obj == Stealth){
+     if(skillXP >fire5){
+         skillXP =  skillXP - compTest11;
+         var counter = 0;
+         var counter2 = skillXP;
+         while(counter2 < fire5){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         skillXP = skillXP+counter;
+         document.cakeform.Stealth[counter].checked=true;
+     }
+ }
+
+
+
+
+ else if(obj == Astrology){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest12;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Astrology[counter].checked=true;
+     }
+ }
+
+ else if(obj == Computer){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest13;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Computer[counter].checked=true;
+     }
+ }
+
+
+ else if(obj == Language){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest14;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Language[counter].checked=true;
+     }
+ }
+
+
+ else if(obj == Medicine){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest15;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Medicine[counter].checked=true;
+     }
+ }
+
+ else if(obj == Occult){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest16;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Occult[counter].checked=true;
+     }
+ }
+
+ else if(obj == Rituals){
+     if(knowledgeXP >fire6){
+         knowledgeXP =  knowledgeXP - compTest17;
+         var counter = 0;
+         var counter2 = knowledgeXP;
+         while(counter2 < fire6){
+             counter2 = counter2 + 1;
+             counter = counter + 1;
+         }
+         knowledgeXP = knowledgeXP+counter;
+         document.cakeform.Rituals[counter].checked=true;
+     }
+ }
+
+     var p1 = physicalXP+3;
+     var s1 = socialXP+3;
+     var m1 = mentalXP+3;
+     var angel = talentXP;
+     var angel2 = skillXP;
+     var angel3 = knowledgeXP;
+     var angel4 = sphereXP;
+     var angel5 = advXP;
+     var angel6 = advXP;
+
+     var bb = parseInt(document.getElementById("Alignment").value)+4;
+     var bb1 = parseInt(document.getElementById("Alignment2").value)+4;
+     var bb2 = parseInt(document.getElementById("Alignment3").value)+4;
+     var bb3 = parseInt(document.getElementById("Alignment4").value);
+     var bb4 = parseInt(document.getElementById("Alignment5").value);
+     var bb5 = parseInt(document.getElementById("Alignment6").value);
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='block';
+    divobj.innerHTML = "Physical: "+p1+" / "+bb;
+               var divobj2 = document.getElementById('totalPrice2');
+    divobj2.style.display='block';
+    divobj2.innerHTML = "Social: "+s1+" / "+bb1;
+
+               var divobj3 = document.getElementById('totalPrice3');
+    divobj3.style.display='block';
+    divobj3.innerHTML = "Mental: "+m1+" / "+bb2;
+
+    var divobj4 = document.getElementById('totalPrice4');
+    divobj4.style.display='block';
+    divobj4.innerHTML = "Talents: "+angel+" / "+bb3;
+
+    var divobj5 = document.getElementById('totalPrice5');
+    divobj5.style.display='block';
+    divobj5.innerHTML = "Skills: "+angel2+" / "+bb4;
+
+    var divobj6 = document.getElementById('totalPrice6');
+    divobj6.style.display='block';
+    divobj6.innerHTML = "Knowledges: "+angel3+" / "+bb5;
+
+    var divobj7 = document.getElementById('totalPrice7');
+    divobj7.style.display='block';
+    divobj7.innerHTML = "Sphere: "+angel4+" / 7";
+
+    var divobj7 = document.getElementById('totalPrice8');
+    divobj7.style.display='block';
+ 
+    divobj7.innerHTML = "Advantages: "+angel6+" / 12";
+  
+    }
+
+function switch1(){
+if(document.getElementById("Alignment").value == "2"){
+document.getElementById("Alignment2").value = "6";
+document.getElementById("Alignment3").value = "4";
+}
+if(document.getElementById("Alignment").value == "4"){
+document.getElementById("Alignment2").value = "2";
+document.getElementById("Alignment3").value = "6";
+}
+if(document.getElementById("Alignment").value == "6"){
+document.getElementById("Alignment2").value = "4";
+document.getElementById("Alignment3").value = "2";
+}
+    myFunction();
+}
+
+function switch2(){
+if(document.getElementById("Alignment2").value == "2"){
+document.getElementById("Alignment").value = "6";
+document.getElementById("Alignment3").value = "4";
+}
+if(document.getElementById("Alignment2").value == "4"){
+document.getElementById("Alignment").value = "2";
+document.getElementById("Alignment3").value = "6";
+}
+if(document.getElementById("Alignment2").value == "6"){
+document.getElementById("Alignment").value = "4";
+document.getElementById("Alignment3").value = "2";
+}
+    myFunction();
+}
+
+function switch3(){
+if(document.getElementById("Alignment3").value == "2"){
+document.getElementById("Alignment").value = "6";
+document.getElementById("Alignment2").value = "4";
+}
+if(document.getElementById("Alignment3").value == "4"){
+document.getElementById("Alignment").value = "2";
+document.getElementById("Alignment2").value = "6";
+}
+if(document.getElementById("Alignment3").value == "6"){
+document.getElementById("Alignment").value = "4";
+document.getElementById("Alignment2").value = "2";
+}
+    myFunction();
+}
+
+
+
+
+
+
+
+function switch4(){
+if(document.getElementById("Alignment4").value == "10"){
+document.getElementById("Alignment5").value = "20";
+document.getElementById("Alignment6").value = "15";
+}
+if(document.getElementById("Alignment4").value == "15"){
+document.getElementById("Alignment5").value = "10";
+document.getElementById("Alignment6").value = "20";
+}
+if(document.getElementById("Alignment4").value == "20"){
+document.getElementById("Alignment5").value = "15";
+document.getElementById("Alignment6").value = "10";
+}
+    myFunction();
+}
+
+function switch5(){
+if(document.getElementById("Alignment5").value == "10"){
+document.getElementById("Alignment4").value = "20";
+document.getElementById("Alignment6").value = "15";
+}
+if(document.getElementById("Alignment5").value == "15"){
+document.getElementById("Alignment4").value = "10";
+document.getElementById("Alignment6").value = "20";
+}
+if(document.getElementById("Alignment5").value == "20"){
+document.getElementById("Alignment4").value = "15";
+document.getElementById("Alignment6").value = "10";
+}
+    myFunction();
+}
+
+function switch6(){
+if(document.getElementById("Alignment6").value == "10"){
+document.getElementById("Alignment4").value = "20";
+document.getElementById("Alignment5").value = "15";
+}
+if(document.getElementById("Alignment6").value == "15"){
+document.getElementById("Alignment4").value = "10";
+document.getElementById("Alignment5").value = "20";
+}
+if(document.getElementById("Alignment6").value == "20"){
+document.getElementById("Alignment4").value = "15";
+document.getElementById("Alignment5").value = "10";
+}
+    myFunction();
+}
+
+
+
+
+
+
+
+function myFunction() {
+
+var ele = document.getElementsByName("Arcane");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Arcane[0].checked=true;
+
+   var ele = document.getElementsByName("Belief");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Belief[0].checked=true;
+
+   var ele = document.getElementsByName("Familiar");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Familiar[0].checked=true;
+
+   var ele = document.getElementsByName("Avatar");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Avatar[0].checked=true;
+
+
+    var ele = document.getElementsByName("Luck");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Luck[0].checked=true;
+
+   var ele = document.getElementsByName("Resources");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Resources[0].checked=true;
+
+ var ele = document.getElementsByName("Strength");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Strength[0].checked=true;
+
+   ele = document.getElementsByName("Correspondence");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Correspondence[0].checked=true;
+
+    ele = document.getElementsByName("Life");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+
+   document.cakeform.Life[0].checked=true;
+
+    ele = document.getElementsByName("Prime");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Prime[0].checked=true;
+
+    ele = document.getElementsByName("Entropy");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Entropy[0].checked=true;
+
+    ele = document.getElementsByName("Matter");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Matter[0].checked=true;
+
+   ele = document.getElementsByName("Spirit");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Spirit[0].checked=true;
+
+   ele = document.getElementsByName("Forces");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Forces[0].checked=true;
+
+    ele = document.getElementsByName("Mind");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Mind[0].checked=true;
+
+    ele = document.getElementsByName("Time");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Time[0].checked=true;
+
+
+
+   ele = document.getElementsByName("Dexterity");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Dexterity[0].checked=true;
+
+   ele = document.getElementsByName("Stamina");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Stamina[0].checked=true;
+
+
+   ele = document.getElementsByName("Charisma");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Charisma[0].checked=true;
+
+   ele = document.getElementsByName("Manipulation");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Manipulation[0].checked=true;
+
+   ele = document.getElementsByName("Appearance");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Appearance[0].checked=true;
+
+
+   ele = document.getElementsByName("Perception");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Perception[0].checked=true;
+
+   ele = document.getElementsByName("Intelligence");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Intelligence[0].checked=true;
+
+   ele = document.getElementsByName("Wits");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Wits[0].checked=true;
+
+    ele = document.getElementsByName("Awareness");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Awareness[0].checked=true;
+
+    ele = document.getElementsByName("Alertness");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Alertness[0].checked=true;
+
+    ele = document.getElementsByName("Athletics");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Athletics[0].checked=true;
+
+    ele = document.getElementsByName("Brawl");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Brawl[0].checked=true;
+
+    ele = document.getElementsByName("Intimidation");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Intimidation[0].checked=true;
+
+    ele = document.getElementsByName("Streetwise");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Streetwise[0].checked=true;
+
+    ele = document.getElementsByName("Drive");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Drive[0].checked=true;
+
+    ele = document.getElementsByName("Firearms");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Firearms[0].checked=true;
+
+    ele = document.getElementsByName("Martial Arts");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.MartialArts[0].checked=true;
+
+    ele = document.getElementsByName("Melee");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Melee[0].checked=true;
+
+    ele = document.getElementsByName("Meditation");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Meditation[0].checked=true;
+
+    ele = document.getElementsByName("Stealth");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Stealth[0].checked=true;
+
+    ele = document.getElementsByName("Astrology");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Astrology[0].checked=true;
+
+    ele = document.getElementsByName("Computer");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Computer[0].checked=true;
+
+    ele = document.getElementsByName("Language");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Language[0].checked=true;
+
+    ele = document.getElementsByName("Medicine");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Medicine[0].checked=true;
+
+    ele = document.getElementsByName("Occult");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Occult[0].checked=true;
+
+    ele = document.getElementsByName("Rituals");
+    for(var i=0;i<ele.length;i++){
+        ele[i].checked = false;
+    }
+    document.cakeform.Rituals[0].checked=true;
+
+    ele = document.getElementsByName("Arete");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Arete[0].checked=true;
+
+
+
+   ele = document.getElementsByName("Willpower");
+   for(var i=0;i<ele.length;i++){
+   ele[i].checked = false;
+   }
+   document.cakeform.Willpower[0].checked=true;
+
+
+
+
+
+
+    var clear = document.getElementById('totalPrice');
+    clear.style.display='block';
+    clear.innerHTML = "Physical: 3 / "+ (parseInt(document.getElementById("Alignment").value)+4);
+    var clear2 = document.getElementById('totalPrice2');
+    clear2.style.display='block';
+    clear2.innerHTML = "Social: 3 / "+ (parseInt(document.getElementById("Alignment2").value)+4);
+    var clear3 = document.getElementById('totalPrice3');
+    clear3.style.display='block';
+    clear3.innerHTML = "Mental: 3 / "+ (parseInt(document.getElementById("Alignment3").value)+4);
+     var clear4 = document.getElementById('totalPrice4');
+    clear4.style.display='block';
+    clear4.innerHTML = "Test: 0 / "+ (parseInt(document.getElementById("Alignment4").value));
+   var clear5 = document.getElementById('totalPrice5');
+    clear5.style.display='block';
+    clear5.innerHTML = "Test: 0 / "+ (parseInt(document.getElementById("Alignment5").value));
+    var clear6 = document.getElementById('totalPrice6');
+    clear6.style.display='block';
+    clear6.innerHTML = "Test: 0 / "+ (parseInt(document.getElementById("Alignment6").value));
+
+}
+
+
+</script>
+</head>
+<body onload='hideTotal()'>
+
+
+        <form action="/chargen/create/" name = "cakeform" method="post">
+        {% csrf_token %}
+    <br>Name: <input type="text" name="name"><br>
+    <br>Password: <input type="text" name="password"><br>
+
+        <TABLE BORDER="0">
+            <tr><td>
+<select id="Alignment" onchange="switch1()">
+  <option value="6" selected>Primary</option>
+  <option value="4">Secondary</option>
+  <option value="2">Tertiary</option>
+</select></td><td><select id="Alignment2" onchange="switch2()">
+  <option value="6">Primary</option>
+  <option value="4" selected>Secondary</option>
+  <option value="2">Tertiary</option>
+</select></td><td><select id="Alignment3" onchange="switch3()">
+  <option value="6">Primary</option>
+  <option value="4">Secondary</option>
+  <option value="2" selected>Tertiary</option></td>
+            </tr>
+            <tr><td><div id="totalPrice">Physical: 3 / 10</div></td>
+                <td><div id="totalPrice2">Social: 3 / 8</div></td>
+                <td><div id="totalPrice3">Mental: 3 / 6</div></td>
+            </tr>
+            <tr>
+                <td>
+
+                <label >Strength</label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="One" onclick="jumpStart(str)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Two" onclick="jumpStart(str)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Three" onclick="jumpStart(str)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Four" onclick="jumpStart(str)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Strength" value="Five" onclick="jumpStart(str)" /></label>
+
+               </td>
+                <td>
+
+                <label >Charisma</label>
+                <label class='radiolabel'><input type="radio"  name="Charisma" value="One" onclick="jumpStart(cha)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Charisma" value="Two" onclick="jumpStart(cha)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Charisma" value="Three" onclick="jumpStart(cha)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Charisma" value="Four" onclick="jumpStart(cha)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Charisma" value="Five" onclick="jumpStart(cha)" /></label>
+
+               </td>
+                <td>
+
+                <label >Perception</label>
+                <label class='radiolabel'><input type="radio"  name="Perception" value="One" onclick="jumpStart(per)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Perception" value="Two" onclick="jumpStart(per)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Perception" value="Three" onclick="jumpStart(per)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Perception" value="Four" onclick="jumpStart(per)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Perception" value="Five" onclick="jumpStart(per)" /></label>
+
+               </td>
+            </tr>
+                <tr>
+                <td>
+
+                <label >Dexterity</label>
+                <label class='radiolabel'><input type="radio"  name="Dexterity" value="One" onclick="jumpStart(dex)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Dexterity" value="Two" onclick="jumpStart(dex)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Dexterity" value="Three" onclick="jumpStart(dex)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Dexterity" value="Four" onclick="jumpStart(dex)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Dexterity" value="Five" onclick="jumpStart(dex)" /></label>
+
+               </td>
+                    <td>
+
+                <label >Manipulation</label>
+                <label class='radiolabel'><input type="radio"  name="Manipulation" value="One" onclick="jumpStart(man)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Manipulation" value="Two" onclick="jumpStart(man)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Manipulation" value="Three" onclick="jumpStart(man)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Manipulation" value="Four" onclick="jumpStart(man)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Manipulation" value="Five" onclick="jumpStart(man)" /></label>
+
+               </td>
+                    <td>
+
+                <label >Intelligence</label>
+                <label class='radiolabel'><input type="radio"  name="Intelligence" value="One" onclick="jumpStart(int)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Intelligence" value="Two" onclick="jumpStart(int)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Intelligence" value="Three" onclick="jumpStart(int)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Intelligence" value="Four" onclick="jumpStart(int)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Intelligence" value="Five" onclick="jumpStart(int)" /></label>
+
+               </td>
+                </tr>
+            <tr>
+                <td>
+
+                <label >Stamina</label>
+                <label class='radiolabel'><input type="radio"  name="Stamina" value="One" onclick="jumpStart(sta)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Stamina" value="Two" onclick="jumpStart(sta)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Stamina" value="Three" onclick="jumpStart(sta)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Stamina" value="Four" onclick="jumpStart(sta)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Stamina" value="Five" onclick="jumpStart(sta)" /></label>
+               </td>
+                <td>
+
+                <label >Appearance</label>
+                <label class='radiolabel'><input type="radio"  name="Appearance" value="One" onclick="jumpStart(app)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Appearance" value="Two" onclick="jumpStart(app)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Appearance" value="Three" onclick="jumpStart(app)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Appearance" value="Four" onclick="jumpStart(app)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Appearance" value="Five" onclick="jumpStart(app)" /></label>
+               </td>
+                <td>
+
+                <label >Wits</label>
+                <label class='radiolabel'><input type="radio"  name="Wits" value="One" onclick="jumpStart(wit)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Wits" value="Two" onclick="jumpStart(wit)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Wits" value="Three" onclick="jumpStart(wit)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Wits" value="Four" onclick="jumpStart(wit)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Wits" value="Five" onclick="jumpStart(wit)" /></label>
+
+               </td>
+                </tr>
+
+                   <tr><td>
+              <select id="Alignment4" onchange="switch4()">
+                <option value="20" selected>Primary</option>
+                <option value="15">Secondary</option>
+                <option value="10">Tertiary</option>
+              </select></td><td><select id="Alignment5" onchange="switch5()">
+                <option value="20">Primary</option>
+                <option value="15" selected>Secondary</option>
+                <option value="10">Tertiary</option>
+              </select></td><td><select id="Alignment6" onchange="switch6()">
+                <option value="20">Primary</option>
+                <option value="15">Secondary</option>
+                <option value="10" selected>Tertiary</option></td>
+                          </tr>
+
+
+
+            <tr><td><div id="totalPrice4">Talents: </div></td>
+                <td><div id="totalPrice5">Skills: </div></td>
+                <td><div id="totalPrice6">Knowledges: </div></td>
+            </tr>
+<tr>
+                <td>
+
+                <label >Awareness</label>
+                <label class='radiolabel'><input type="radio"  name="Awareness" value="One" onclick="jumpStart(Awareness)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Awareness" value="Two" onclick="jumpStart(Awareness)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Awareness" value="Three" onclick="jumpStart(Awareness)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Awareness" value="Four" onclick="jumpStart(Awareness)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Awareness" value="Five" onclick="jumpStart(Awareness)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Awareness" value="Six" onclick="jumpStart(Awareness)" /></label>
+               </td>
+                <td>
+
+                <label >Drive</label>
+                <label class='radiolabel'><input type="radio"  name="Drive" value="One" onclick="jumpStart(Drive)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Drive" value="Two" onclick="jumpStart(Drive)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Drive" value="Three" onclick="jumpStart(Drive)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Drive" value="Four" onclick="jumpStart(Drive)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Drive" value="Five" onclick="jumpStart(Drive)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Drive" value="Six" onclick="jumpStart(Drive)" /></label>
+               </td>
+                <td>
+
+                <label >Astrology</label>
+                <label class='radiolabel'><input type="radio"  name="Astrology" value="One" onclick="jumpStart(Astrology)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Astrology" value="Two" onclick="jumpStart(Astrology)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Astrology" value="Three" onclick="jumpStart(Astrology)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Astrology" value="Four" onclick="jumpStart(Astrology)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Astrology" value="Five" onclick="jumpStart(Astrology)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Astrology" value="Six" onclick="jumpStart(Astrology)" /></label>
+               </td>
+                </tr>
+<tr>
+                <td>
+
+                <label >Alertness</label>
+                <label class='radiolabel'><input type="radio"  name="Alertness" value="One" onclick="jumpStart(Alertness)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Alertness" value="Two" onclick="jumpStart(Alertness)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Alertness" value="Three" onclick="jumpStart(Alertness)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Alertness" value="Four" onclick="jumpStart(Alertness)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Alertness" value="Five" onclick="jumpStart(Alertness)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Alertness" value="Six" onclick="jumpStart(Alertness)" /></label>
+               </td>
+                <td>
+
+                <label >Firearms</label>
+                <label class='radiolabel'><input type="radio"  name="Firearms" value="One" onclick="jumpStart(Firearms)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Firearms" value="Two" onclick="jumpStart(Firearms)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Firearms" value="Three" onclick="jumpStart(Firearms)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Firearms" value="Four" onclick="jumpStart(Firearms)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Firearms" value="Five" onclick="jumpStart(Firearms)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Firearms" value="Six" onclick="jumpStart(Firearms)" /></label>
+               </td>
+                <td>
+
+                <label >Computer</label>
+                <label class='radiolabel'><input type="radio"  name="Computer" value="One" onclick="jumpStart(Computer)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Computer" value="Two" onclick="jumpStart(Computer)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Computer" value="Three" onclick="jumpStart(Computer)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Computer" value="Four" onclick="jumpStart(Computer)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Computer" value="Five" onclick="jumpStart(Computer)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Computer" value="Six" onclick="jumpStart(Computer)" /></label>
+
+               </td>
+                </tr>
+            <tr>
+                <td>
+
+                <label >Athletics</label>
+                <label class='radiolabel'><input type="radio"  name="Athletics" value="One" onclick="jumpStart(Athletics)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Athletics" value="Two" onclick="jumpStart(Athletics)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Athletics" value="Three" onclick="jumpStart(Athletics)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Athletics" value="Four" onclick="jumpStart(Athletics)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Athletics" value="Five" onclick="jumpStart(Athletics)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Athletics" value="Six" onclick="jumpStart(Athletics)" /></label>
+               </td>
+                <td>
+
+                <label >Martial Arts</label>
+                <label class='radiolabel'><input type="radio"  name="Martial Arts" value="One" onclick="jumpStart(MartialArts)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Martial Arts" value="Two" onclick="jumpStart(MartialArts)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Martial Arts" value="Three" onclick="jumpStart(MartialArts)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Martial Arts" value="Four" onclick="jumpStart(MartialArts)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Martial Arts" value="Five" onclick="jumpStart(MartialArts)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Martial Arts" value="Six" onclick="jumpStart(MartialArts)" /></label>
+               </td>
+                <td>
+
+                <label >Language</label>
+                <label class='radiolabel'><input type="radio"  name="Language" value="One" onclick="jumpStart(Language)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Language" value="Two" onclick="jumpStart(Language)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Language" value="Three" onclick="jumpStart(Language)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Language" value="Four" onclick="jumpStart(Language)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Language" value="Five" onclick="jumpStart(Language)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Language" value="Six" onclick="jumpStart(Language)" /></label>
+
+               </td>
+                </tr>
+            <tr>
+                <td>
+
+                <label >Brawl</label>
+                <label class='radiolabel'><input type="radio"  name="Brawl" value="One" onclick="jumpStart(Brawl)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Brawl" value="Two" onclick="jumpStart(Brawl)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Brawl" value="Three" onclick="jumpStart(Brawl)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Brawl" value="Four" onclick="jumpStart(Brawl)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Brawl" value="Five" onclick="jumpStart(Brawl)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Brawl" value="Six" onclick="jumpStart(Brawl)" /></label>
+               </td>
+                <td>
+
+                <label >Melee</label>
+                <label class='radiolabel'><input type="radio"  name="Melee" value="One" onclick="jumpStart(Melee)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Melee" value="Two" onclick="jumpStart(Melee)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Melee" value="Three" onclick="jumpStart(Melee)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Melee" value="Four" onclick="jumpStart(Melee)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Melee" value="Five" onclick="jumpStart(Melee)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Melee" value="Six" onclick="jumpStart(Melee)" /></label>
+               </td>
+                <td>
+
+                <label >Medicine</label>
+                <label class='radiolabel'><input type="radio"  name="Medicine" value="One" onclick="jumpStart(Medicine)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Medicine" value="Two" onclick="jumpStart(Medicine)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Medicine" value="Three" onclick="jumpStart(Medicine)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Medicine" value="Four" onclick="jumpStart(Medicine)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Medicine" value="Five" onclick="jumpStart(Medicine)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Medicine" value="Six" onclick="jumpStart(Medicine)" /></label>
+
+               </td>
+                </tr>
+            <tr>
+                <td>
+
+                <label >Intimidation</label>
+                <label class='radiolabel'><input type="radio"  name="Intimidation" value="One" onclick="jumpStart(Intimidation)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Intimidation" value="Two" onclick="jumpStart(Intimidation)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Intimidation" value="Three" onclick="jumpStart(Intimidation)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Intimidation" value="Four" onclick="jumpStart(Intimidation)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Intimidation" value="Five" onclick="jumpStart(Intimidation)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Intimidation" value="Six" onclick="jumpStart(Intimidation)" /></label>
+               </td>
+                <td>
+
+                <label >Meditation</label>
+                <label class='radiolabel'><input type="radio"  name="Meditation" value="One" onclick="jumpStart(Meditation)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Meditation" value="Two" onclick="jumpStart(Meditation)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Meditation" value="Three" onclick="jumpStart(Meditation)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Meditation" value="Four" onclick="jumpStart(Meditation)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Meditation" value="Five" onclick="jumpStart(Meditation)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Meditation" value="Six" onclick="jumpStart(Meditation)" /></label>
+               </td>
+                <td>
+
+                <label >Occult</label>
+                <label class='radiolabel'><input type="radio"  name="Occult" value="One" onclick="jumpStart(Occult)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Occult" value="Two" onclick="jumpStart(Occult)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Occult" value="Three" onclick="jumpStart(Occult)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Occult" value="Four" onclick="jumpStart(Occult)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Occult" value="Five" onclick="jumpStart(Occult)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Occult" value="Six" onclick="jumpStart(Occult)" /></label>
+
+               </td>
+                </tr>
+ <tr>
+                <td>
+
+                <label >Streetwise</label>
+                <label class='radiolabel'><input type="radio"  name="Streetwise" value="One" onclick="jumpStart(Streetwise)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Streetwise" value="Two" onclick="jumpStart(Streetwise)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Streetwise" value="Three" onclick="jumpStart(Streetwise)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Streetwise" value="Four" onclick="jumpStart(Streetwise)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Streetwise" value="Five" onclick="jumpStart(Streetwise)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Streetwise" value="Six" onclick="jumpStart(Streetwise)" /></label>
+               </td>
+                <td>
+
+                <label >Stealth</label>
+                <label class='radiolabel'><input type="radio"  name="Stealth" value="One" onclick="jumpStart(Stealth)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Stealth" value="Two" onclick="jumpStart(Stealth)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Stealth" value="Three" onclick="jumpStart(Stealth)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Stealth" value="Four" onclick="jumpStart(Stealth)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Stealth" value="Five" onclick="jumpStart(Stealth)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Stealth" value="Six" onclick="jumpStart(Stealth)" /></label>
+               </td>
+                <td>
+
+                <label >Rituals</label>
+                <label class='radiolabel'><input type="radio"  name="Rituals" value="One" onclick="jumpStart(Rituals)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Rituals" value="Two" onclick="jumpStart(Rituals)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Rituals" value="Three" onclick="jumpStart(Rituals)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Rituals" value="Four" onclick="jumpStart(Rituals)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Rituals" value="Five" onclick="jumpStart(Rituals)" /></label>
+                    <label class='radiolabel'><input type="radio"  name="Rituals" value="Six" onclick="jumpStart(Rituals)" /></label>
+
+               </td>
+                </tr>
+                <tr><td><br><br><br></td>
+            <td><div id="totalPrice7">Spheres: 0 / 6</div></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+
+                <label >Correspondence</label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor1" value="One" onclick="jumpStart(sphere1)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor2" value="Two" onclick="jumpStart(sphere1)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor3" value="Three" onclick="jumpStart(sphere1)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor4" value="Four" onclick="jumpStart(sphere1)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor5" value="Five" onclick="jumpStart(sphere1)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Correspondence" id="cor6" value="Six" onclick="jumpStart(sphere1)" /></label>
+            </td>
+            <td>
+
+                <label >Life</label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="One" id="lif1" onclick="jumpStart(sphere2)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="Two" id="lif2" onclick="jumpStart(sphere2)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="Three" id="lif3" onclick="jumpStart(sphere2)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="Four" id="lif4" onclick="jumpStart(sphere2)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="Five" id="lif5" onclick="jumpStart(sphere2)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Life" value="Six" id="lif6" onclick="jumpStart(sphere2)" /></label>
+            </td>
+            <td>
+
+                <label >Prime</label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="One" id="pri1" onclick="jumpStart(sphere3)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="Two" id="pri2" onclick="jumpStart(sphere3)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="Three" id="pri3" onclick="jumpStart(sphere3)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="Four" id="pri4" onclick="jumpStart(sphere3)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="Five" id="pri5" onclick="jumpStart(sphere3)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Prime" value="Six" id="pri6" onclick="jumpStart(sphere3)" /></label>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <label >Entropy</label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="One" id="ent1" onclick="jumpStart(sphere4)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="Two" id="ent2" onclick="jumpStart(sphere4)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="Three" id="ent3" onclick="jumpStart(sphere4)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="Four" id="ent4" onclick="jumpStart(sphere4)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="Five" id="ent5" onclick="jumpStart(sphere4)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Entropy" value="Six" id="ent6" onclick="jumpStart(sphere4)" /></label>
+            </td>
+            <td>
+
+                <label >Matter</label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="One" id="mat1" onclick="jumpStart(sphere5)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="Two" id="mat2" onclick="jumpStart(sphere5)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="Three" id="mat3" onclick="jumpStart(sphere5)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="Four" id="mat4" onclick="jumpStart(sphere5)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="Five" id="mat5" onclick="jumpStart(sphere5)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Matter" value="Six" id="mat6" onclick="jumpStart(sphere5)" /></label>
+            </td>
+            <td>
+
+                <label >Spirit</label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="One" id="spi1" onclick="jumpStart(sphere6)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="Two" id="spi2" onclick="jumpStart(sphere6)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="Three" id="spi3" onclick="jumpStart(sphere6)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="Four" id="spi4" onclick="jumpStart(sphere6)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="Five" id="spi5" onclick="jumpStart(sphere6)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Spirit" value="Six" id="spi6" onclick="jumpStart(sphere6)" /></label>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <label >Forces</label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="One" id="for1" onclick="jumpStart(sphere7)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="Two" id="for2" onclick="jumpStart(sphere7)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="Three" id="for3" onclick="jumpStart(sphere7)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="Four" id="for4" onclick="jumpStart(sphere7)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="Five" id="for5" onclick="jumpStart(sphere7)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Forces" value="Six" id="for6" onclick="jumpStart(sphere7)" /></label>
+            </td>
+            <td>
+
+                <label >Mind</label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="One" id="min1" onclick="jumpStart(sphere8)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="Two" id="min2" onclick="jumpStart(sphere8)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="Three" id="min3" onclick="jumpStart(sphere8)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="Four" id="min4" onclick="jumpStart(sphere8)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="Five" id="min5" onclick="jumpStart(sphere8)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Mind" value="Six" id="min6" onclick="jumpStart(sphere8)" /></label>
+            </td>
+            <td>
+
+                <label >Time</label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="One" id="tim1" onclick="jumpStart(sphere9)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="Two" id="tim2" onclick="jumpStart(sphere9)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="Three" id="tim3" onclick="jumpStart(sphere9)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="Four" id="tim4" onclick="jumpStart(sphere9)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="Five" id="tim5" onclick="jumpStart(sphere9)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Time" value="Six" id="tim6" onclick="jumpStart(sphere9)" /></label>
+
+            </td>
+        </tr>
+<tr><td><br><br><br></td>
+            <td><div id="totalPrice8">Advantages: 0 / 12</div></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+
+                <label >Arete</label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="One" id="arete1" onclick="jumpStart(art)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Two" id="arete2" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Three" id="arete3" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Four" id="arete4" onclick="jumpStart(art)" /></label
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Five" id="arete5" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Six" id="arete6" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Seven" id="arete7" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Eight" id="arete8" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Nine" id="arete9" onclick="jumpStart(art)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arete" value="Ten" id="arete10" onclick="jumpStart(art)" /></label>
+               
+            </td>
+            <td>
+
+                <label >Willpower</label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil1" value="One" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil2" value="Two" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil3" value="Three" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil4" value="Four" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil5" value="Five" onclick="jumpStart(will)" checked /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil6" value="Six" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil7" value="Seven" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil8" value="Eight" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil9" value="Nine" onclick="jumpStart(will)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Willpower" id="wil10" value="Ten" onclick="jumpStart(will)" /></label>
+                
+            </td>
+            <td>
+
+                <label >Quintessence</label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin1" value="One" onclick="jumpStart(qui)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin2" value="Two" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin3" value="Three" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin4" value="Four" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin5" value="Five" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin6" value="Six" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin7" value="Seven" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin8" value="Eight" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin9" value="Nine" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin10" value="Ten" onclick="jumpStart(qui)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Quintessence" id="quin10" value="Eleven" onclick="jumpStart(qui)" /></label>
+
+
+            </td>
+        </tr>
+        <tr><td><br><td><td></td></td</td></tr>
+        <tr>
+            <td>
+
+                <label >Arcane</label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="One" onclick="jumpStart(arc)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="Two" onclick="jumpStart(arc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="Three" onclick="jumpStart(arc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="Four" onclick="jumpStart(arc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="Five" onclick="jumpStart(arc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Arcane" value="Six" onclick="jumpStart(arc)" /></label>
+            </td>
+            <td>
+
+                <label >Belief</label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="One" onclick="jumpStart(bel)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="Two" onclick="jumpStart(bel)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="Three" onclick="jumpStart(bel)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="Four" onclick="jumpStart(bel)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="Five" onclick="jumpStart(bel)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Belief" value="Six" onclick="jumpStart(bel)" /></label>
+            </td>
+            <td>
+
+                <label >Luck</label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="One" onclick="jumpStart(luc)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="Two" onclick="jumpStart(luc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="Three" onclick="jumpStart(luc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="Four" onclick="jumpStart(luc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="Five" onclick="jumpStart(luc)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Luck" value="Six" onclick="jumpStart(luc)" /></label>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <label >Avatar</label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar1" value="One" onclick="jumpStart(avtr)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar2" value="Two" onclick="jumpStart(avtr)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar3" value="Three" onclick="jumpStart(avtr)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar4" value="Four" onclick="jumpStart(avtr)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar5" value="Five" onclick="jumpStart(avtr)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Avatar" id="avatar6" value="Six" onclick="jumpStart(avtr)" /></label>
+            </td>
+            <td>
+
+                <label >Familiar</label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="One" onclick="jumpStart(fam)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="Two" onclick="jumpStart(fam)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="Three" onclick="jumpStart(fam)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="Four" onclick="jumpStart(fam)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="Five" onclick="jumpStart(fam)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Familiar" value="Six" onclick="jumpStart(fam)" /></label>
+            </td>
+            <td>
+
+                <label >Resources</label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="One" onclick="jumpStart(res)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="Two" onclick="jumpStart(res)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="Three" onclick="jumpStart(res)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="Four" onclick="jumpStart(res)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="Five" onclick="jumpStart(res)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Resources" value="Six" onclick="jumpStart(res)" /></label>
+
+            </td>
+        </tr>
+
+                <tr><td></br><div id="error"></div></td>
+                <td><div id="error2"></div></td>
+                <td><div id="error3"></div></td>
+                </tr></TABLE>
+        <input type="submit" name="submit" value="Submit"/>
+       </form>
+        <br/>
+
+</body>
+</html>

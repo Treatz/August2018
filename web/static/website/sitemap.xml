@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated at http://www.timestampgenerator.com/tools/xml-sitemap-from-list/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>http://www.streetwitch.com/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/about/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/chargen/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/admin/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/ff/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+        <loc>http://www.streetwitch.com/fiction</loc>
+        <priority>.5</priority>
+        <changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/links/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/webclient/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.streetwitch.com/authenticatelogin/</loc>
+	<priority>.5</priority>
+	<changefreq>daily</changefreq>
+</url>
+
+</urlset>

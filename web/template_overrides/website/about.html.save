@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 800px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 801px) {
+#mobile {
+   display: none;
+ }
+}
+
+</style>
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+      <h1>Welcome to the World of Darkness</h1>
+        <p><div id="mobile"> <img src = "/static/website/images/cover.jpg"></img><br><br></div>
+	<div style = "width: 25%; float:left">
+	<p><div id="cover"> <img src = "/static/website/images/cover.jpg"></img></div>
+	</p>
+	</div>
+	<div style="width: 75%; float:right">
+      <p><h8 style="font-size:175%">Mage: the Ascension Online</h8>
+        <br><br> <h8 style="font-size:175%">Back Story </h8><br><br>
+<i>Mage: the Ascension Online is virtual reality experience based on the role playing game by <a href="http://white-wolf.com/">White Wolf Publishing</a></i>
+<br><br>With magick you can alter the very fabric of reality, but one wrong move and that fabric can be torn to pieces. At one time there was a battle for reality, between different Mages and their paradigms. But these days the battle is generally over. Mages have left the "Real World", and have taken up hiding deep in the spirit world in a place called the Horizon. Back on earth the Technocracy rules without any checks or balances. They fill the minds of humanity with scientific dogma and their version of truth. You can't play a game of dice without the Technocrazy sticking their nose in it, and Paradox pushes back so hard you'll wake up in a mental ward before you can take out your wand.  Still, a few Mages risk everything to help those who awaken on their owm, and the Horizon Ciy is their last refuge of hope. 
+ <br><br>
+Until the formation of the Technocracy, magick was a common occurance. And in days past, the horizon was just around the corner.  Today it is a place where mages can rework the tapestry of reality without fear of persecution. Horizon City is a cross roads for Mages. Portals go in and out, leading to other dimensions (Even back to Earth). However, the Horizon Realms are in a state of perpetual decay. The magical energy source known as Prime is only created on earth and the spirit world is in short suply. 
+<br><br>
+There are ten different traditions of Mages who share this City. The Traditions don't always get along, because most of time they're not able to agree. In fact you're more likely to die by the hands of another Mage than you are from the Technocracy.<br><br>The nine tradition are:
+<br><br>
+The Akashic Brotherhood - Buddhists who aren't afraid to use kung fu<br><br>
+The Celestial Chorus - Believers in a universal higher power<br><br>
+The Cult of Ecstasy - Use drugs to expand their perceptions<br><br>
+The Dreamspeakers -  Spirit shamans<br><br>
+The Euthanatos - Fuel their magic from death<br><br>
+The Order of Hermes - Practice high ritual magick<br><br>
+Sons of Ether - Searchers for the science of magick<br><br>
+The Verbena - Healers and naturalists<br><br>
+The Virtual Adepts - Hacktivists and spies<br><br>
+The Hollow Ones - Goths who don't or can't fit in<br><br><br>
+<h8 style="font-size:175%">Game Mechanics </h8><br><br>
+Mage: The Ascension Online is a MUD that goes beyond being a MUD. The acronym MUD stands for Multi User Dungeon, and is usually just interactive fiction.  MUDs have been around since the beginning of the internet, and have since become graphical.  The graphical MUDs are known as  MMORPGs (Massively Multiplayer Online RPGs).   Mage: the Ascension Online is graphical MUD on a budget. Not quite a comercial video game and not quite a text based MUD. Everything in Mage: the Ascension Online has an image attached to it, and movement around the MUD can be done with the click of a mouse. MUDs normally run on Telenet, but Mage the Ascension Online runs through a web client. You can also use a telnet client and connect to telnet://mud.streetwitch.com:4000 where you can play the game without the graphics.  You can connect with mobile phone using the web app or a MUD/Telnet app.   Mage: the Ascension Online was built using the Python server Evennia, which is such a powerful back end for the game that it's possible to reprogram any aspect of it without shutting down the server.<br><br>
+We have taken the World Of Darkness combat system and coded it into an automatic part of the server. This is the core of the game, and it follows all of the rules for Mage. The combat system uses a menu that has clickable links. The links let you do things like attack, dodge, change weapons or anything else you might want to do. Many other online games require players and storytellers to role dice. In this game however there is no need for any storyteller to interfere in combat, or most of the time magick. 
+<br><br>The Magick system is designed around ten spheres, instead of using the classic nine.  Magick can be used in three ways in the game.  The first is to do ritual magick, which involves having enough time and being in a safe location.  The storyteller will then bring the game alive if you are successful and you can create literally anything.  The second way is to use one of the hard coded spells for each of the spheres (or combine them).  There are tons of spells for each of the spheres.  The third way is to design your own spell.  This combines the last two methods allowing you to create a spell you can then use whenever you want to.
+<br><br>
+The ten spheres are:
+<br><br>
+Correspondence - 
+Allows you to locate things, scry on things, teleport things etc.
+<br><br>
+Fate - 
+Allows you to create blessings and curses that modify other things in different ways.
+<br><br>
+Forces - 
+Cause more damage, increase speed, control weather / lightning, etc
+<br><br>
+Life - 
+Heal yourself and others, shapechange, cause lethal damage, etc.
+<br><br>
+Mind - 
+Telepathy, psychic commands, hallucinations  etc.
+<br><br>
+Matter - 
+Create & destroy objects, and..
+<br><br>
+Prime - 
+Generate mana, drain mana, fuel other magic, etc
+<br><br>
+Spirit - 
+Spirit travel & communication
+<br><br>
+Time - 
+Reverse  time to saved point, speed up time, slow down time, freeze time..
+<br><br>
+Death - 
+Deals with ghosts and all things dead
+      </p>
+	
+</div>
+{% endblock %}

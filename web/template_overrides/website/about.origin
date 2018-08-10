@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 1200px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+#mobile {
+   display: none;
+ }
+}
+
+
+</style>
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+	<div>
+<br><br>
+<div id="cover"> <img style="PADDING-LEFT: 125px" src = "/static/website/images/mage.png"></img></div>
+
+<br>
+<div id="mobile" style="font-size:115%;">
+      <p><h8 style="font-size:175%">The Magic</h8>
+<br><i>Mage: the Ascension Online is a virtual reality experience based on the role playing game by <a href="http://white-wolf.com/">White Wolf Publishing</a></i>
+<div style="line-height: 1.5em;">
+With magick you can alter the very fabric of reality, but one wrong move and that fabric can be torn to pieces. At one time there was a battle for reality, between different Mages and their paradigms. But these days the war is generally over. Mages have left the "Real World", and have taken up hiding deep in the spirit world in a place called the Horizon. 
+<br><br>
+Reality was ripped apart because of the war, and the Technocracy claimed the remaining pieces as their own.  They rule a city known as the Telerarium, and control it without any checks or balances. The Technocracy fills the minds of humanity with scientific dogma and their version of truth. It is hard to do anything without the Technocrazy knowing about it, and the forces of Paradox push back so hard you will wind up in a mental ward before you can take out your wand. 
+<br><br>
+Still,there are Mages remaining in the Telerium trying to escape.  The legend of the Horizon is their last refuge of hope.  They either want to ascend on their own, or bring sleeping humanity with them. Until the formation of the Technocracy, magick was a common occurance. And in days past, the horizon was just around the corner.
+<br><br>
+Today the Horizon is a place where mages can rework the tapestry of reality without fear of persecution. Horizon City is a cross roads for Mages with Portals going in and out. However, the Horizon Realms are in a state of perpetual decay. The energy source known as Prime was only created on Earth, and after the war both the Horizon and the Telerium are in short suply.
+<br><br>
+Based around the WoD game by the same name.  You play a Mage trying to escape from the dark city they live in.  The normal citizens in the city have no idea magic exists, and the Technocracy aims to keep it that way. The Technocracy wants to shield reality from entities entering the Telerium, but spirits sometimes break through the barriers and cause chaos.  You play a mage trying to escape the city and find safe haven from the Technocracy.
+<br><br>
+ When Mages use magic in public they draw the attention of the systems the Technocracy has in place.  As a Mage, you can run or fight.  But if you run you will be hunted and if you fight backup will be arriving soon.  There are still places in the city where it is safe to use magic, and places where sleepers don't go. Mages who are able to surive advance in the study of the Spheres.
+<br><br>
+The main goal of the game is to avoid being caught by the Technocracy, and make friends with other mages to help each other survive.  The game progresses as the world is explored in both the physical and spirit worlds.  The streets of the city run in a circles and there seems to be no escape from the Telerium.  However escaping from the city is the final goal.
+<br><br>
+Almost everything you could want to do in the game is coded.  There is no reason to roll dice, and storytellers can drop in at any time to help out by controlling NPCs.  Players are trusted to use emote commands as long as they aren't abused.
+<br><br>
+The theme of the game is gothic punk. The city is dark and creepy and there doesn't seem to be any way out. The economy for practical purposes doesn't exist for Mages.  They have to live without all of the luxery of the city, often living in abandoned buildinigs or digging through dumpsters to find food.
+<br><br>
+If players interact with NPC's the story tellers are immediately given notice and will puppet the NPCs to role play with the players. This is used to create running stories in the game, and immerse players in a realistic and ambient environment.
+<br><br>
+The combat system has been ironed out to work over a long period of time.  It can be driven with a click of the mouse.  Player killing is allowed, but it is not hard to simply run from a fight. In the event that you die, you will go into the spirit world.  Of course you can come back to life again in a number of ways.
+<br><br>
+Players can be randomly created at the login, or through the CharGen on the webpage. Everything in the game has an image attached to it, from people to places.  Any colored underlined text can be clicked on with the mouse to see what objects look like, navigate exits, or take part in menu driven combat.
+<br><br>
+It is easy to create your own custom spells, with aproval from story tellers. This game is designed for World of Darkness role players, and comes right out of the game Mage: The Ascnension. The goal is really to just stay in character and hang out wih other Mages.  We suggest you find a safe place to set as your home where you can reconnect after you log off.
+<br><br>
+There are ten different traditions of Mages who share Horizon City. The Traditions don't always get along, and most of time they're not even able to agree. In fact you're more likely to die by the hands of another Mage than you are from the Technocracy.<br><br>The ten tradition are:
+<br><br>
+The Akashic Brotherhood - Buddhists who aren't afraid to use kung fu<br><br>
+The Celestial Chorus - Believers in a universal higher power<br><br>
+The Cult of Ecstasy - Use drugs to expand their perceptions<br><br>
+The Dreamspeakers -  Spirit shamans<br><br>
+The Euthanatos - Fuel their magic from death<br><br>
+The Order of Hermes - Practice high ritual magick<br><br>
+Sons of Ether - Searchers for the science of magick<br><br>
+The Verbena - Healers and naturalists<br><br>
+The Virtual Adepts - Hacktivists and spies<br><br>
+The Hollow Ones - Goths who don't or can't fit in<br><br><br>
+<h8 style="font-size:175%">An Online Computer Game </h8><br><br>
+Mage: The Ascension Online is a MUD that goes beyond being a MUD. MUDs have been around since the beginning of the internet, and have always just been interactive text.  The acronym MUD stands for Multi User Dimension. Today we have multiplayer RPGs with graphicts.  These graphical MUDs are known as  MMORPGs (Massively Multiplayer Online RPGs).   Mage: the Ascension Online is a graphical MUD on a budget. Not quite a commercial video game and not quite a text based MUD. Everything in Mage: the Ascension Online has an image attached to it, and movement around the MUD can be done with the click of a mouse. MUDs normally run on Telenet, but Mage the Ascension Online runs through a web client. You can still use an old telnet client and connect to telnet://mud.streetwitch.com:4000 where the game runs without the graphics.  You can also connect with your mobile devices using the graphical web app on this site.   Mage: the Ascension Online was built using the Python server Evennia, which is such a powerful back end for the game that it's possible to reprogram any aspect of it without shutting down the server.<br><br>
+Following all the rules for the Mage the Ascension role playing game, we have taken the World Of Darkness combat system and programmed it to run as a part of the MUD. The combat system uses a turn based menu, which has clickable links. The links let you do things like attack, dodge, change weapons or anything else you might want to do. Many other online games require players and storytellers to role dice. In this game however there is no need for any storyteller to interfere in combat, or most of the time magick.  
+<br><br>The Magick system is designed around the nine Spheres of the original game.  Magick can be used in three ways in the game.  The first is to do ritual magick, which involves having enough time and being in a safe location.  If your ritual is a success the Storyteller will bring the game alive to create anything your character imagines. The second way is to use one of the hard coded spells for each of the spheres (or combine them).  There are tons of spells for each of the spheres.  The third way is to design your own spell.  This combines the last two methods  to create a spell that you can use at a later time.
+<br><br>
+The nine spheres and the spells already coded for them are:
+<br><br>
+<pre>
+    Correspondence
+
+        +Locate   - Provides directions to an object or character.
+        +Jump     - Teleport to a room.
+        +Peek     - Look at what another character is holding.
+        +Portal   - Creates a portal that anyone can pass through.
+        +Scry     - Remote view other locations.
+        +Source   - Locks a source location in place.
+        +Take     - Teleports an object from another player.
+        +Teleport - Teleport through a list of directions
+        +Where    - Provides directions to a room.
+
+    Entropy
+
+        +Ban        - Bans a character from a room with bad luck.
+        +Bless      - Increases your luck at everything.
+        +Charm      - blesses an object with luck.
+        +Curse      - Increases any damamge the target is hit by.
+        +Deathtouch - Knock a subject unconscious.
+        +Fate       - View another persons luck / karma.
+        +Hex        - Ruins targets luck at everything.
+
+    Forces
+
+        +Kinetic - Changes unarmed attacks to lethal.
+        +Push    - Increase your strength using forces.
+        +Rush    - Increase your speed using forces.
+        +Stop    - Prevents attacks from hitting you.
+        +Strike  - Call lightning.
+
+    Life
+
+        +Clone - Cange your appearance into someone else.
+        +Con   - Examine character's physical state.
+        +Heal  - Restores a living being back to health.
+        +Raise - Brings a corpse back to life.
+        +Sap   - Drains a person's physical atributes.
+        +Shift - Changes you into an animal.
+
+    Matter
+
+        +Enchant - blesses a weapon with luck.
+        +Make    - Create objects.
+
+    Mind
+
+        +Bug      - Listen to everything another character says.
+        +Illusion - Fills the room with an illusion.
+        +Command  - Forces a character to do something.
+        +Invis    - Temporarily makes you invisible.
+        +Project  - Causes a character to see an illusion.
+        +Send     - Sends a message to another character with telepathy.
+
+    Prime
+
+        +Dispell - Stops target from using magic.
+        +Drain   - Drains quintessence from targets willpower.
+        +Use     - Use personal luck/quintessence/willpower, or from an object.
+
+    Spirit
+
+        +Exorcise   - Send ghosts back to where they belong.
+        +Lastbreath - Determine identity and cause of corpses.
+        +Inflict    - Causes harm to the living.
+        +Sight      - Temporarily see into the spirit world.
+        +Summon     - Opens the room to the spirit world.
+        +Reach      - Interact with the spirit world.
+  
+    Time
+
+        +Freeze   - Freezes time in a location.
+        +Slowtime - Slows time around you
+        +History  - Reviews the history in a location
+</pre>
+<br><br>
+      </p>
+</div>
+</div>
+<div id = "cover" style="font-size:115%; PADDING-LEFT: 50px; PADDING-RIGHT: 200px;">
+      <p><h8 style="font-size:175%">The Magic</h8>
+<br><i>Mage: the Ascension Online is a virtual reality experience based on the role playing game by <a href="http://white-wolf.com/">White Wolf Publishing</a></i>
+<div style="font-size:100%; line-height: 1.5em;">
+With magick you can alter the very fabric of reality, but one wrong move and that fabric can be torn to pieces. At one time there was a battle for reality, between different Mages and their paradigms. But these days the war is generally over. Mages have left the "Real World", and have taken up hiding deep in the spirit world in a place called the Horizon. 
+<br><br>
+Reality was ripped apart because of the war, and the Technocracy claimed the remaining pieces as their own.  They rule a city known as the Telerarium, and control it without any checks or balances. The Technocracy fills the minds of humanity with scientific dogma and their version of truth. It is hard to do anything without the Technocrazy knowing about it, and the forces of Paradox push back so hard you will wind up  in a mental ward before you can take out your wand. 
+<br><br>
+Still,there are Mages remaining in the Telerium trying to escape.  The legend of the Horizon is their last refuge of hope.  They either want to ascend on their own, or bring sleeping humanity with them. Until the formation of the Technocracy, magick was a common occurance. And in days past, the horizon was just around the corner.
+<br><br>
+Today the Horizon is a place where mages can rework the tapestry of reality without fear of persecution. Horizon City is a cross roads for Mages with Portals going in and out. However, the Horizon Realms are in a state of perpetual decay. The energy source known as Prime was only created on Earth, and after the war both the Horizon and the Telerium are in short suply.
+<br><br>
+Based around the WoD game by the same name.  You play a Mage trying to escape from the dark city they live in.  The normal citizens in the city have no idea magic exists, and the Technocracy aims to keep it that way. The Technocracy wants to shield reality from entities entering the Telerium, but Spirits sometimes break through the barriers and cause chaos.  You play a mageg trying to escape the city and find safe haven from the Technocracy.
+<br><br>
+ When Mages use magic in public they draw the attention of the systems the Technocracy has in place.  As a Mage, you can run or fight.  But if you run you will be hunted and if you fight backup will be arriving soon.  There are still places in the city where it is safe to use magic, and places where sleepers don't go. Mages who are able to surive advance in the study of the Spheres.
+<br><br>
+The main goal of the game is to avoid being caught by the Technocracy, and make friends with other mages to help each other survive.  The game progresses as the world is explored in both the physical and spirit worlds.  The streets of the city run in a circles and there seems to be no escape from the Telerium.  However escaping from the city is the final goal.
+<br><br>
+Almost everything you could want to do in the game is coded.  There is no reason to roll dice, and storytellers can drop in at any time to help out by controlling NPCs.  Players are trusted to use emote commands as long as they aren't abused.
+<br><br>
+The theme of the game is gothic punk. The city is dark and creepy and there doesn't seem to be any way out. The economy for practical purposes doesn't exist for Mages.  They have to live without all of the luxery of the city, often living in abandoned buildinigs or digging through dumpsters to find food.
+<br><br>
+If players interact with NPC's the story tellers are immediately given notice and will puppet the NPCs to role play with the players. This is used to create running stories in the game, and immerse players in a realistic and ambient environment.
+<br><br>
+The combat system has been ironed out to work over a long period of time.  It can be driven with a click of the mouse.  Player killing is allowed, but it is not hard to simply run from a fight. In the event that you die, you will go into the spirit world.  Of course you can come back to life again in a number of ways.
+<br><br>
+Players can be randomly created at the login, or through the CharGen on the webpage. Everything in the game has an image attached to it, from people to places.  Any colored underlined text can be clicked on with the mouse to see what objects look like, navigate exits, or take part in menu driven combat.
+<br><br>
+It is easy to create your own custom spells, with approval from story tellers. This game is for World of Darkness role players, and anyone who enjoys magic and wizards. The story comes right out of the White Wolf game Mage: The Ascnension, and the goal is really to just stay in character and hang out wih other Mages.  We suggest you find a safe place to set as your home where you can reconnect after you log off.
+<br><br>
+There are ten different traditions of Mages who share Horizon City. The Traditions don't always get along, and most of time they're not even able to agree. In fact you're more likely to die by the hands of another Mage than you are from the Technocracy.<br><br>The ten tradition are:
+<br><br>
+The Akashic Brotherhood - Buddhists who aren't afraid to use kung fu<br><br>
+The Celestial Chorus - Believers in a universal higher power<br><br>
+The Cult of Ecstasy - Use drugs to expand their perceptions<br><br>
+The Dreamspeakers -  Spirit shamans<br><br>
+The Euthanatos - Fuel their magic from death<br><br>
+The Order of Hermes - Practice high ritual magick<br><br>
+Sons of Ether - Searchers for the science of magick<br><br>
+The Verbena - Healers and naturalists<br><br>
+The Virtual Adepts - Hacktivists and spies<br><br>
+The Hollow Ones - Goths who don't or can't fit in<br><br><br>
+<h8 style="font-size:175%">An Online Computer Game </h8><br><br>
+Mage: The Ascension Online is a MUD that goes beyond being a MUD. MUDs have been around since the beginning of the internet, and have always just been interactive text.  The acronym MUD stands for Multi User Dimension. Today we have multiplayer RPGs with graphicts.  These graphical MUDs are known as  MMORPGs (Massively Multiplayer Online RPGs).   Mage: the Ascension Online is a graphical MUD on a budget. Not quite a commercial video game and not quite a text based MUD. Everything in Mage: the Ascension Online has an image attached to it, and movement around the MUD can be done with the click of a mouse. MUDs normally run on Telenet, but Mage the Ascension Online runs through a web client. You can still use an old telnet client and connect to telnet://mud.streetwitch.com:4000 where the game runs without the graphics.  You can also connect with your mobile devices using the graphical web app on this site.   Mage: the Ascension Online was built using the Python server Evennia, which is such a powerful back end for the game that it's possible to reprogram any aspect of it without shutting down the server.<br><br>
+Following all the rules for the Mage the Ascension role playing game, we have taken the World Of Darkness combat system and programmed it to run as a part of the MUD. The combat system uses a turn based menu, which has clickable links. The links let you do things like attack, dodge, change weapons or anything else you might want to do. Many other online games require players and storytellers to role dice. In this game however there is no need for any storyteller to interfere in combat, or most of the time magick.  
+<br><br>The Magick system is designed around the nine Spheres of the original game.  Magick can be used in three ways in the game.  The first is to do ritual magick, which involves having enough time and being in a safe location.  If your ritual is a success the Storyteller will bring the game alive to create anything your character imagines. The second way is to use one of the hard coded spells for each of the spheres (or combine them).  There are tons of spells for each of the spheres.  The third way is to design your own spell.  This combines the last two methods  to create a spell that you can use at a later time.
+<br><br>
+The nine spheres and the spells currently coded for them are:
+<br><br><pre>
+
+    Correspondence
+
+        +Locate   - Provides directions to an object or character.
+        +Jump     - Teleport to a room.
+        +Peek     - Look at what another character is holding.
+        +Portal   - Creates a portal that anyone can pass through.
+        +Scry     - Remote view other locations.
+        +Source   - Locks a source location in place.
+        +Take     - Teleports an object from another player.
+        +Teleport - Teleport through a list of directions
+        +Where    - Provides directions to a room.
+
+    Entropy
+
+        +Ban        - Bans a character from a room with bad luck.
+        +Bless      - Increases your luck at everything.
+        +Charm      - blesses an object with luck.
+        +Curse      - Increases any damamge the target is hit by.
+        +Deathtouch - Knock a subject unconscious.
+        +Fate       - View another persons luck / karma.
+        +Hex        - Ruins targets luck at everything.
+
+    Forces
+
+        +Kinetic - Changes unarmed attacks to lethal.
+        +Push    - Increase your strength using forces.
+        +Rush    - Increase your speed using forces.
+        +Stop    - Prevents attacks from hitting you.
+        +Strike  - Call lightning.
+
+    Life
+
+        +Clone - Cange your appearance into someone else.
+        +Con   - Examine character's physical state.
+        +Heal  - Restores a living being back to health.
+        +Raise - Brings a corpse back to life.
+        +Sap   - Drains a person's physical atributes.
+        +Shift - Changes you into an animal.
+
+    Matter
+
+        +Enchant - blesses a weapon with luck.
+        +Make    - Create objects.
+
+    Mind
+
+        +Bug      - Listen to everything another character says.
+        +Illusion - Fills the room with an illusion.
+        +Command  - Forces a character to do something.
+        +Invis    - Temporarily makes you invisible.
+        +Project  - Causes a character to see an illusion.
+        +Send     - Sends a message to another character with telepathy.
+
+    Prime
+
+        +Dispell - Stops target from using magic.
+        +Drain   - Drains quintessence from targets willpower.
+        +Use     - Use personal luck/quintessence/willpower, or from an object.
+
+    Spirit
+
+        +Exorcise   - Send ghosts back to where they belong.
+        +Lastbreath - Determine identity and cause of corpses.
+        +Inflict    - Causes harm to the living.
+        +Sight      - Temporarily see into the spirit world.
+        +Summon     - Opens the room to the spirit world.
+        +Reach      - Interact with the spirit world.
+
+    Time
+
+        +Freeze   - Freezes time in a location.
+        +Slowtime - Slows time around you
+        +History  - Reviews the history in a location
+</pre>
+<br><br>
+
+
+      </p>
+</div>	
+</div>
+</div>
+{% endblock %}

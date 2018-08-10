@@ -1,0 +1,18 @@
+<!-- file mygame/web/chargen/templates/chargen/detail.html-->
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Character Information</h1>
+{% if user.is_authenticated %}
+    {% if user.id == p_id %}
+        <h2>{{name}}</h2>
+        <h2>Background</h2>
+        <p>{{background}}</p>
+        <p>Submitted: {{submitted}}</p>
+    {% else %}
+        <p>You didn't submit this character.</p>
+    {% endif %}
+{% else %}
+<p>You aren't logged in.</p>
+{% endif %}
+{% endblock %}

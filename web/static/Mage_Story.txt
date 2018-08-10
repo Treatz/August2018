@@ -1,0 +1,100 @@
+1. Tite 
+
+	1.1
+		Mage: The Ascension Online
+
+2. Game Overview
+
+	2.1 Game Concept
+		
+Based around the WoD game by the same name.  You play a Mage trying to escape from the dark city they live in.  The normal citizens in the city have no idea magic exists, and a dark group of cybernetic sorcerers aim to keep it that way.  When Mages use magic in public they draw the attention of those sorcerers.  Mages can run or fight, but if they run they will be hunted and if they fight more sorceres will soon come.  However there are places in the city where it is safe to use magic, and places where sleepers don't go.
+
+	2.2 Genre
+
+Gothic Punk. The city is dark and creepy and there doesn't seem to be a way out.
+
+	2.3 Target Audience
+
+World of Darkness players, and anyone who enjoys playing a wizard.
+
+	2.4 Game Flow Summary
+
+Players can be randomly created at the login, or through a webgen online the games webpage.  If players talk to NPC's or engage in combat with NPC's the story tellers are given notice and can puppet the NPC's. This is used to create running stories in the game, and immerse players in a realistic and ambient environment.
+
+	2.5 Look and Feel
+
+Everything in the game has an image attached to it, from people to places.  Any colored underlined text can be clicked on with the mouse to see what objects look like, navigate exits, or take part in menu driven combat.
+
+	3.0 Gameplay and Mechanics
+
+		3.1 Gameplay
+
+			3.1.1 Game Progression
+
+The main goal of the game is to avoid being caught by the ruling mages, and make friends with other mages to help each other survive.  The game progresses as the world is explored, both physical worlds and spirit worlds.  The streets of the city run in a circle and there appears there is no escape.  However escaping from the city is the final goal.
+
+			3.1.2 Mission/Challenge Structure
+
+The game is mostly about role playing with other players and discovering what it is like to be a mage.  However Story Tellers are able to lead adventures by creating and controlling NPCs.
+
+			3.1.3 Puzzle Structure
+
+				???
+
+			3.1.4 Objectives
+
+The objective of the game is to learn and advance in the study of magic without being caught by the ruling mages of the city, and to ultimately escape from the city.
+
+			3.1.5 Game Flow
+
+Almost everything you could want to do in the game is coded.  There is no reason to emote what is happening or roll dice, and storytellers can drop in at any time to help out with NPCs.  Players are trusted with emote commands as long as they aren't abused.
+
+			3.2 Mechanics
+
+				3.2.1 Physics
+
+Metaphysics is the central theme of the game.  A group of cyber sorcerors have created the city to shield reality from entities intruding on their turf.  Spirits break through the barrier sometimes and cause chaos.  Characters are mages trying to escape the city and find a save haven from the sorcerors.
+
+				3.2.2 Movement
+
+There are different levels of speed for characters.  There is also magic that can freeze time and do some pretty cool stuff.  We want vehicles too, but they aren't working yet.
+
+				3.2.3 Objects
+
+It is easy to create custom objects that do most anything, and players can create their own with help from story tellers.
+
+				3.2.4 Actions
+
+Spells and Combat are easy to use.  Combat is menu driven, and follows the rules of the original game.  Spells come right out of the Mage rulebook, and players  are allowed to create new ones.
+
+				3.2.5 Combat
+
+The combat system has been ironed out to work over a long period of time.  It can be worked with a click of the mouse.  Player killing is allowed, but it is not hard to simply run from a fight.  The cyber sorcerors runnning the city will track you down and send more after you on the other hand.  However if you die you go into the spirit world, and can come back to life again.
+
+				3.2.6 Economy
+
+The economy for practical purposes doesn't exist for Mages.  They have to live without all of the luxery of the city, often living in abandoned buildinigs or digging through dumpsters to find food.
+
+				3.2.7 Screen Flow
+
+The game has graphics for everything!
+
+
+			3.3 Game Options
+
+The game has many options, but all players have to be Mages and fit into different Mage categories.  Becoming one of the Mages ruling the city is not possible either.
+
+			3.4 Replaying and Saving
+
+Players can set a home they start in, and when they disconnect their avatar dissapears from the game.
+
+			3.5 Cheats and Easter Eggs
+
+No Cheating!
+
+		4.  Story, Setting and Character
+
+			4.1 Story and Narative
+
+The story comes right out of the white wolf game Mage: The Ascnension, and the goal is really to just stay in character and hang out wih other Mages.
+

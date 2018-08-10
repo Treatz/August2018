@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 1200px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+#mobile {
+   display: none;
+ }
+}
+
+</style>
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+	<div style="width: 75%; padding-left: 25px;">
+      <p><h8 style="font-size:175%">Search for us:</h8><br><br>
+By searching for us on <a href="https://www.google.com/#q=mage+the+ascension+online">Google</a> you are supporting this site and helping others find us!
+
+      <p><h8 style="font-size:175%">Links:</h8>
+         <h8 style="font-size:175%"> </h8><br>
+<br>Let us know if you link to us and we will link back to you.</br>
+<br><a href="http://games.evennia.com/">Evennia Game Index</a>
+<br><a href="https://www.facebook.com/MageMUD/">Facebook Page</a>
+<br><a href="https://www.reddit.com/r/MUD/comments/64ko47/mage_the_ascension_mud/?st=j55pcl9u&sh=29c1f6aa">Reddit</a>
+<br><a href="http://www.mudconnect.com/mud-bin/adv_search.cgi?Mode=MUD&mud=Mage:+the+Ascension+Online">The Mud Connector</a>
+<br><a href="http://musoapbox.net/topic/1704/mage-the-ascension-online">musoapbox</a>
+<br><a href="http://wodcityofangels.com/page.php?72">City of Angels</a>
+<br><a href="http://www.wodgotham.com/">World of Darkness Gotham</a>
+<br><a href="https://sites.google.com/site/magephoenixrpg/home/links">Mage by E-Mail</a>
+<br><a href="https://play.google.com/store/apps/details?id=com.asmodeedigital.magerefuge&hl=en">Interacive Fiction - Mage</a>
+<br><a href="http://www.white-wolf.com/">White Wolf Publishing</a>
+<br><a href="http://www.drivethrurpg.com/product/149562/Mage-The-Ascension-20th-Anniversary-Edition">Mage 20th Anniversary Rulebook</a>
+<br><a href="http://whitewolf.wikia.com/wiki/Mage:_The_Ascension">Mage Wikia</a>
+<br><a href="http://unmodchat.com/forum/viewtopic.php?f=11&t=6510">Unmoderated Chat</a>
+<br><a href="http://theonyxpath.com/category/worlds/classicworldofdarkness/magetheascension/">Onyx Path Publishing</a>
+<br><a href="http://forum.theonyxpath.com/forum/main-category/main-forum/the-classic-world-of-darkness/mage-the-ascension/1102705-story-tellers-needed">Oynx Path Mage Forums</a>
+<br><a href="http://www.disposablefictioncomics.com/newsish/">Disposable Fiction Comics</a>
+
+      </p>
+	</div>
+</div>
+{% endblock %}

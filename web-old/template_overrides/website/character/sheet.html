@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+
+table {
+    border-collapse: collapse;
+
+}
+
+th, td{
+    font-size: 150%;
+    text-align: left;
+    padding: 15px;
+
+}
+
+tr:nth-child(even){background-color: lightgrey}
+
+th {
+    background-color: rgb(117,144,174);
+    color: white;
+}
+</style>
+<h1>Character</h1>
+<br><br>
+<table><tr><td style="background-color: rgb(117,144,174); color: white">
+    Name: {{ character.name }}
+</td></tr><tr>
+    <td>Essence: {{ character.db.essence }}</td></tr><tr>
+    <td style="background-color: rgb(117,144,174); color: white">Concept: {{ character.db.concept }}</td></tr><tr>
+        <td>Tradition: {{ character.db.tradition }}</td>
+        </tr><tr><td style="background-color: rgb(117,144,174); color:white">
+    Description: {{ character.db.desc }}</td></tr></table>
+<br><br>
+<h1>Attributes</h1>
+  <br><br>
+    <table>
+      <thead>
+        <tr>
+          <th>Physical</th>
+          <th>  </th>
+            <th>Social</th>
+          <th>  </th>
+            <th>Mental</th>
+          <th>  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Strength</td>
+          <td>{{ character.db.strength }}</td>
+            <td>Charisma</td>
+            <td>{{ character.db.charisma }}</td>
+            <td>Perception</td>
+            <td>{{ character.db.perception }}</td>
+        </tr>
+        <tr>
+          <td>Dexterity</td>
+          <td>{{ character.db.dexterity }}</td>
+            <td>Manipulation</td>
+            <td>{{ character.db.manipulation }}</td>
+            <td>Intelligence</td>
+            <td>{{ character.db.intelligence }}</td>
+        </tr>
+        <tr>
+          <td>Stamina</td>
+          <td>{{ character.db.stamina }}</td>
+            <td>Appearance</td>
+            <td>{{ character.db.appearance }}</td>
+            <td>Wits</td>
+            <td>{{ character.db.wits }}</td>
+        </tr>
+      </tbody>
+    </table>
+<br><br>
+    <h1>Abilities</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Talents</th>
+          <th>  </th>
+            <th>Skills</th>
+          <th>  </th>
+            <th>Knowledges</th>
+          <th>  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alertness</td>
+          <td>{{ character.db.alertness }}</td>
+            <td>Drive</td>
+            <td>{{ character.db.drive }}</td>
+            <td>Astrology</td>
+            <td>{{ character.db.astrology }}</td>
+        </tr>
+        <tr>
+          <td>Athletics</td>
+          <td>{{ character.db.athletics }}</td>
+            <td>Firearms</td>
+            <td>{{ character.db.firearms }}</td>
+            <td>Computer</td>
+            <td>{{ character.db.computer }}</td>
+        </tr>
+        <tr>
+          <td>Awareness</td>
+          <td>{{ character.db.awareness }}</td>
+            <td>Martial Arts</td>
+            <td>{{ character.db.martialarts }}</td>
+            <td>Language</td>
+            <td>{{ character.db.language }}</td>
+        </tr>
+      <tr>
+          <td>Brawl</td>
+          <td>{{ character.db.brawl }}</td>
+            <td>Melee</td>
+            <td>{{ character.db.melee }}</td>
+            <td>Medicine</td>
+            <td>{{ character.db.medicine }}</td>
+        </tr>
+      <tr>
+          <td>Intimidation</td>
+          <td>{{ character.db.awareness }}</td>
+            <td>Meditation</td>
+            <td>{{ character.db.martialarts }}</td>
+            <td>Occult</td>
+            <td>{{ character.db.language }}</td>
+          <tr>
+          <td>Streetwise</td>
+          <td>{{ character.db.streetwise }}</td>
+            <td>Stealth</td>
+            <td>{{ character.db.stealth }}</td>
+            <td>Rituals</td>
+            <td>{{ character.db.rituals }}</td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+<br><br>
+<h1>Spheres</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>  </th>
+            <th> </th>
+          <th>  </th>
+            <th> </th>
+          <th>  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Correspondence</td>
+          <td>{{ character.db.correspondence }}</td>
+            <td>Life</td>
+            <td>{{ character.db.life }}</td>
+            <td>Prime</td>
+            <td>{{ character.db.prime }}</td>
+        </tr>
+        <tr>
+          <td>Entropy</td>
+          <td>{{ character.db.entropy }}</td>
+            <td>Matter</td>
+            <td>{{ character.db.matter }}</td>
+            <td>Spirit</td>
+            <td>{{ character.db.spirit }}</td>
+        </tr>
+        <tr>
+          <td>Forces</td>
+          <td>{{ character.db.forces }}</td>
+            <td>Mind</td>
+            <td>{{ character.db.mind }}</td>
+            <td>Time</td>
+            <td>{{ character.db.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+<br><br>
+<h1>Advantages</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>  </th>
+            <th></th>
+          <th>  </th>
+            <th></th>
+          <th>  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arete</td>
+          <td>{{ character.db.arete }}</td>
+            <td>Willpower</td>
+            <td>{{ character.db.willpower }}</td>
+            <td>Quintessence</td>
+            <td>{{ character.db.quintessence }}</td>
+        </tr>
+        <tr>
+          <td>Arcane</td>
+          <td>{{ character.db.arcane }}</td>
+            <td>Belief</td>
+            <td>{{ character.db.belief }}</td>
+            <td>Luck</td>
+            <td>{{ character.db.luck }}</td>
+        </tr>
+        <tr>
+          <td>Avatar</td>
+          <td>{{ character.db.avatar }}</td>
+            <td>Familiar</td>
+            <td>{{ character.db.familiar }}</td>
+            <td>Resources</td>
+            <td>{{ character.db.resources }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+{% endblock %}

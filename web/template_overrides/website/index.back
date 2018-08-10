@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+{% endblock %}
+
+{% block content %}
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+      <h1>Welcome to the World of Darkness</h1>
+	<div style = "width: 25%; float:left">
+	<p> <img src = "http://www.streetwitch.com/wp-content/uploads/2017/03/cover.jpg"></img>
+	</p>
+	</div>
+	<div style="width: 75%; float:right">
+      <p><h8 style="font-size:175%">" </h8> Reality is a more dangerous place than anyone wants to admit.  The world we know is a lie, and the truth is even more frightening. Normal people find sanctuary in nature, churches, or a doctor's prescription.  You were once asleep like them, but no longer.
+         I know a club not far from here, where people dance throughout the night.  Where in the back rooms the Awakened gather.
+         Inside there is a place that has never been touched the burning times.<br>
+         They call it, Club Horizon. <h8 style="font-size:175%"> "</h8><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Merlini
+      </p>
+		</div>
+   </div>
+</div>
+
+<div class="rowOfBoxes dividingBorderAbove">
+
+   <div class="quarter noBorderOnLeft">
+      <h1>Players</h1>
+      <p>
+      There's currently <strong>{{num_players_connected}}</strong> connected out of a total of <strong>{{num_players_registered}}</strong> players registered. Of these, <strong>{{num_players_registered_recent}}</strong> were created this week, and <strong>{{num_players_connected_recent}}</strong> have connected within the last seven days.
+      </p>
+   </div>
+
+   <div class="quarter">
+      <h1>Recently Connected</h1>
+      <ul>
+      {% for player in players_connected_recent %}
+      <li>{{player.username}} -- <em>{{player.last_login|timesince}} ago</em></li>
+      {% endfor %}
+      </ul>
+      <p class="filler"><!-- Filler para to extend left vertical line --></p>
+   </div>
+
+   <div class="quarter">
+      <h1>Database Stats</h1>
+      <ul>
+      <li>{{num_players_registered}} players (+ {{num_characters}} characters)</li>
+      <li>{{num_rooms}} rooms (+ {{num_exits}} exits)</li>
+      <li>{{num_others}} other objects</li>
+
+      </ul>
+   </div>
+
+   <div class="quarter">
+      <h1>Evennia</h1>
+      <p><a href="http://evennia.com">Evennia</a> is an open-source MUD server built in
+      <a href="http://python.org">Python</a>, on top of the
+      <a href="http://twistedmatrix.com">Twisted</a> and
+      <a href="http://djangoproject.com">Django</a> frameworks. This
+      combination of technologies allows for the quick and easy creation
+      of the game of your dreams - as simple or as complex as you like.</p>
+   </div>
+
+</div>
+{% endblock %}

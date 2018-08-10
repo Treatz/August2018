@@ -1,0 +1,49 @@
+from evennia.commands.default.muxcommand import MuxCommand
+from evennia.contrib.dice import roll_dice
+
+class CmdCharisma(MuxCommand):
+
+    """
+       +charisma - Used to influence others.
+    
+       Usage: 
+         +charisma <target> = <msg>
+   
+       Makes people like you.
+    
+    """   
+
+    help_category = "Skills"
+    auto_help = True
+   
+    key = "+intimidate"
+    locks = "cmd:all()"
+
+    def func(self):
+        if self.caller.db.med:
+            self.caller.msg("You are forced to stop your meditation.")
+            self.caller.db.med = 0
+        if self.caller.ndb.ritual:
+            self.caller.msg("You are forced to stop your ritual.")
+            self.caller.ndb.ritual = 0
+        if not self.args:
+            self.caller.msg("You must say something for this to work.")
+            return
+        hit =  self.caller.search(self.args)
+        wins = 0
+        for x in range(0, self.caller.db.manipulation + self.caller.db.charisma + self.caller.db.appearance):
+            roll = roll_dice(1,10)
+            if(roll > 5:
+                wins += 1
+        df = 0
+        for x in range(0, hit.db.manipulation + hit.db.charisma + hit.db.appearance):
+            roll = roll_dice(1,10)
+            if(roll > 5:
+                df += 1
+
+        if(wins > df):
+            self.lhs.msg("%s seems very charming as he says, %s." % (self.caller, self.args)
+            hit.msg("you seem very charming as you say, %s." % self.args)            
+        else:
+            hit.msg("%s says, %s." % (self.caller, self.args)
+            hit.msg("You say, %s." % self.args) 

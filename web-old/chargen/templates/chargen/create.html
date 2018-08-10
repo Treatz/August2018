@@ -1,0 +1,23 @@
+<!-- file mygame/web/chargen/templates/chargen/create.html-->
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Character Creation</h1>
+{% if user.is_authenticated %}
+<form action="/chargen/create/" method="post">
+    {% csrf_token %}
+    <br>Name: <input type="text" name="name"><br>
+    <br>Password: <input type="text" name="password"><br>
+     <label >Strength</label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="One" onclick="jumpStart(str)" checked/></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Two" onclick="jumpStart(str)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Three" onclick="jumpStart(str)" /></label>
+                <label class='radiolabel'><input type="radio"  name="Strength" value="Four" onclick="jumpStart(str)" /></label>
+                     <label class='radiolabel'><input type="radio"  name="Strength" value="Five" onclick="jumpStart(str)" /></label>
+
+    <input type="submit" name="submit" value="Submit"/>
+</form>
+{% else %}
+<p>You aren't logged in.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 1200px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+#mobile {
+   display: none;
+ }
+}
+
+</style>
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+      <h1>Welcome to the World of Darkness</h1>
+        <p><div id="mobile"> <img src = "/static/website/images/cover.jpg"></img><br><br></div>
+	<div style = "width: 25%; float:left">
+	<p><div id="cover"> <img src = "/static/website/images/cover.jpg"></img></div>
+	</p>
+	</div>
+	<div style="width: 75%; float:right">
+      <p><h8 style="font-size:175%">Mage: the Ascension Online Fan Fiction</h8>
+<br><br><br>
+<h8 style="font-size:150%">"Taxi" - Wed, July 26 2007 - By Corey</h8>
+<br><br>
+
+He went to the club strickly for the atmosphere and not the beer. Still, he knew ahead of time that he would be getting drunk anyway.  He told himself he would have a cherry coke instead of a whisky chased with budweiser.  
+<br><br>
+As soon as he went into the club, he was surrounded by dancing and music.  Not just any kind of music, but gothic house.  And not just any type of woman.  Young women between the ages of 21 and 30, and they all dressed head to toe in black.  If he could'nt drink he could certainly still enjoy the women, or at least one woman. 
+ <br><br>
+Knowing a bit about love spells and a lot about women, he scanned the dance floor looking for the most beautiful one at the club.  Once he found her, charming her would be simple.  
+<br><br>
+Then he saw her, sitting alone at the bar.  She was drinking a beer straight out of the bottle.  Walking to the bar he sat down next to her, ordering the cherry coke just as he had planned.  He was painfully aware he had no chance with this woman unless he could get her under his spell.  
+<br><br>
+She turned her neck to look at him and smiled saying, "So I guess you just came here for the atmosphere and not the booze?"
+<br><br>
+The music was so loud it would be hard to hear what anyone said without a little telepathy or at least a little skill at reading lips.  But still, it was as if she could read minds too.  Not worrying about the potential consequences of casting a love spell on another mage, he continued on as usual.  He projected his thoughts into her mind repeating them over and over.  "Hello, my name is Danny would you like to go back home with me?"
+<br><br>
+She smiled, and he knew she could hear his voice in her head but his lips weren't moving.  He took her hand, saing the same phrase allowed to her again.
+<br><br>
+"Hello, my name is Danny would you like to go back home with me?"
+<br><br>
+Her jaw dropped open, as if she had never seen a ventriloquist act before.  Then she nodded and downed the rest of her beer.  He walked with her outside, holding the door open for her.  There was already a Taxi waiting outside and he put her arms around her as they both slid into the back seat.  That's when he realized, despite all the magic  he didn't even know this womans name.  But the important thing was that he didn't have a drink.
+
+       <br> <br><br> <h8 style="font-size:150%">"Portal" - Mon, July 24 2007 - By Corey</h8>
+<br><br>He closed his eyes, remembering the time he cast his first spell. If he took the ritual one step at a time it would have to produce the same results.  It would have been easy if he still had the worm wood that the spell required.  The alternative of course would be to use his glock pistol when whatever was on the other side of his door broke its way in. He concentrated imagining a circle of light around him, and began chanting magic words he still didn't comprehend himself.  Then, the image in front of him vanished, the door flew open with a bang and a harry beast lunged forward, growling.
+<br><br>
+Today was quickly becoming a bad day.  Especially now that he was going to be late to his three year anniversary with his girlfriend Linda. He was already preparing to spend the entire evening explaining himself to her.  On top of that, he couldn't keep his focus to cast the spell.  Despite all of this the beast stopped in front of him.  Its mouth hanging open, and drooling.  It's breath hot, smelling like raw decay.  It would only be a moment before it devoured him whole.
+<br><br>
+Then without a second thought he pulled out his glock and fired three shots into he creatures body.  As loud as his gun shots were, the piercing howl that came from he beast was worse than living next to an airport.  Its cry caused dogs to bark miles away, and probably shattered a few car windows too.
+<br><br>
+He took the demon by its legs and dragged it out the broken door into he hallway, he could see a pool of green blood forming on his carpeting. And he wondered who had summoned the thing to begin with and why they had sent it after him.  Demons were rare in the Horizon, and this was about the only time he had ever had the bad fortune of encountering one.  Once the demon was out of his apartment he dug out his wand, and cast a circle in the door way.
+<br><br>
+A shimmering spiral of light filled the room as a wind tossed loose objects through the air.  Somewhere in the wall, a hole opened up and he walked toward it.  As he stepped through the portal it quickly closed behind him.
+ 
+      </p>
+	
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header_ext %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block content %}
+<style>
+@media screen and (max-width: 1200px) {
+#cover {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+#mobile {
+   display: none;
+ }
+}
+
+</style>
+<div id = "mobile">
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+      <p><h8 style="font-size:140%;PADDING-LEFT: 0px;">Welcome to the World of Darkness</h8>
+<i>Mage: the Ascension Online is a virtual reality experience based on the role playing game by <a href="http://white-wolf.com/">White Wolf Publishing</a></i>
+      <p><p style="PADDING-Right:0px;font-size:80%;">"Most people find sanctuary in churches, nature, or prescriptions from the doctor. You were once asleep like them, but no longer.  The world as they know it is a lie, and the truth if far more frightening.  There is  a club not far from here, where people dance throughout the night. Where in the back rooms the Awakened gather. Inside there's a place that's never been touched by the flames of the burning times. It's called Club Horizon." <br>&nbsp;&nbsp;&nbsp;&nbsp; -Merlini</p>
+	 <p style="PADDING-LEFT: 0px; PADDING-RIGHT:0px;">Mage: the Ascension has been around as a role playing game for more than 20 years. It is set in a mirror world from ours called the World of Darkness, where horrors could be lurking around every corner.  Mages are the hope in this desperate world.  They are the activists who fight back in a corrupt system.  They are the healers, and the visionaries.  Mages are the people who die for what they believe in. Mage the Ascension is a game where you become a character with the powers of a God. Mages reshape reality using their will, and believe so strongly that they are able to change the world.  Still, mages are just people, and with power comes corruption. Many have said to us, "Mage: the Ascension will never be a video game. It is too complex!", well we are proving them wrong.  However, we have taken the game and simplfied it.  Even though combat and magic are coded into the world, this is a social MUD.  The goal is to have fun and role playing with friends, and creating a piece of the world while you do.  If another mage kills your character you can continue playing in the spirit world, and with the right magic come back to life.  The only rules are that you must stay in character and have fun!</p><br><br>
+<div class="rowOfBoxes dividingBorderAbove">
+
+   <div class="quarter noBorderOnLeft">
+      <h1>Accounts</h1>
+      <p>
+      There's currently <strong>{{num_accounts_connected}}</strong> connected out of a total of <strong>{{num_accounts_registered}}</strong> accounts registered. Of these, <strong>{{num_accounts_registered_recent}}</strong> were created this week, and <strong>{{num_accounts_connected_recent}}</strong> have connected within the last seven days.
+      </p>
+   </div>
+
+   <div class="quarter">
+      <h1>Recently Connected</h1>
+      <ul>
+      {% for account in accounts_connected_recent %}
+      <li>{{account.username}} -- <em>{{account.last_login|timesince}} ago</em></li>
+      {% endfor %}
+      </ul>
+      <p class="filler"><!-- Filler para to extend left vertical line --></p>
+   </div>
+
+   <div class="quarter">
+      <h1>Database Stats</h1>
+      <ul>
+      <li>{{num_accounts_registered}} accounts (+ {{num_characters}} characters)</li>
+      <li>{{num_rooms}} rooms (+ {{num_exits}} exits)</li>
+      <li>{{num_others}} other objects</li>
+
+      </ul>
+   </div>
+
+   <div class="quarter">
+      <h1>Evennia</h1>
+      <p><a href="http://evennia.com">Evennia</a> is an open-source MUD server built in
+      <a href="http://python.org">Python</a>, on top of the
+      <a href="http://twistedmatrix.com">Twisted</a> and
+      <a href="http://djangoproject.com">Django</a> frameworks. This
+      combination of technologies allows for the quick and easy creation
+      of the game of your dreams - as simple or as complex as you like.</p>
+  </div>
+</div
+</div>
+</div>
+
+
+</div>
+</div>
+<div id = "cover">
+<div class="rowOfBoxes">
+   <!--div class="twoThirds noBorderOnLeft"-->
+   <div class="noBorderOnLeft" style="font-size:115%">
+	<div style = "width: 20%; float:left">
+	<p><div id="cover"> <img style="PADDING-LEFT: 0px; PADDING-RIGHT: 25px;" src = "/static/website/images/cover.jpg"></img></div>
+	</p>
+	</div>
+      <p><h8 style="font-size:175%;PADDING-LEFT: 0px;">Welcome to the World of Darkness</h8><br>
+<i style = "font-size:90%; PADDING-LEFT: 0px;">Mage: the Ascension Online is a virtual reality experience based on the role playing game by <a href="http://white-wolf.com/">White Wolf Publishing</a></i>
+      <p style="PADDING-LEFT:135px;PADDING-Right:135px;font-size:90%;">"Most people find sanctuary in churches, nature, or prescriptions from the doctor. You were once asleep like them, but no longer.  The world as they know it is a lie, and the truth if far more frightening.  There is  a club not far from here, where people dance throughout the night. Where in the back rooms the Awakened gather. Inside there's a place that's never been touched by the flames of the burning times. It's called Club Horizon." <br>&nbsp;&nbsp;&nbsp;&nbsp; -Merlini</p>
+	 <p style="PADDING-LEFT: 35px; PADDING-RIGHT:50px;">Mage: the Ascension has been around as a role playing game for more than 20 years. It is set in a mirror world from ours called the World of Darkness, where horrors could be lurking around every corner.  Mages are the hope in this desperate world.  They are the activists who fight back in a corrupt system.  They are the healers, and the visionaries.  Mages are the people who die for what they believe in. Mage the Ascension is a game where you become a character with the powers of a God. Mages reshape reality using their will, and believe so strongly that they are able to change the world.  Still, mages are just people, and with power comes corruption. Many have said to us, "Mage: the Ascension will never be a video game. It is too complex!", well we are proving them wrong.  However, we have taken the game and simplfied it.  Even though combat and magic are coded into the world, this is a social MUD.  The goal is to have fun role playing with your friends, and creating a piece of the world while you do.  If another mage kills your character you can continue playing in the spirit world, and with the right magic come back to life.  The only rules are that you must stay in character and have fun!</p>
+<div class="rowOfBoxes dividingBorderAbove">
+   <div class="quarter noBorderOnLeft">
+      <h1>Accounts</h1>
+      <p>
+      There's currently <strong>{{num_accounts_connected}}</strong> connected out of a total of <strong>{{num_accounts_registered}}</strong> accounts registered. Of these, <strong>{{num_accounts_registered_recent}}</strong> were created this week, and <strong>{{num_accounts_connected_recent}}</strong> have connected within the last seven days.
+      </p>
+   </div>
+
+   <div class="quarter">
+      <h1>Recently Connected</h1>
+      <ul>
+      {% for account in accounts_connected_recent %}
+      <li>{{account.username}} -- <em>{{account.last_login|timesince}} ago</em></li>
+      {% endfor %}
+      </ul>
+      <p class="filler"><!-- Filler para to extend left vertical line --></p>
+   </div>
+
+   <div class="quarter">
+      <h1>Database Stats</h1>
+      <ul>
+      <li>{{num_accounts_registered}} accounts (+ {{num_characters}} characters)</li>
+      <li>{{num_rooms}} rooms (+ {{num_exits}} exits)</li>
+      <li>{{num_others}} other objects</li>
+
+      </ul>
+   </div>
+
+   <div class="quarter">
+      <h1>Evennia</h1>
+      <p><a href="http://evennia.com">Evennia</a> is an open-source MUD server built in
+      <a href="http://python.org">Python</a>, on top of the
+      <a href="http://twistedmatrix.com">Twisted</a> and
+      <a href="http://djangoproject.com">Django</a> frameworks. This
+      combination of technologies allows for the quick and easy creation
+      of the game of your dreams - as simple or as complex as you like.</p>
+  </div>
+</div
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}
